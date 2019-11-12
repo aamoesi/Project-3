@@ -18,7 +18,7 @@ export const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
   const guestLinks = (
     <ul>
       <li>
-        <a href='!#'>Developers</a>
+        <a href='!#'>Video Gamers</a>
       </li>
       <li>
         <Link to='/register'>Register</Link>
@@ -32,7 +32,7 @@ export const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
     <nav className='navbar bg-dark'>
       <h1>
         <Link to='/'>
-          <i className='fas fa-code' /> DevConnector
+          <i className='fas fa-code' /> Dajjma!
         </Link>
       </h1>
       {!loading && (
@@ -51,7 +51,4 @@ const mapStateToProps = state => ({
   auth: state.auth
 });
 
-export default connect(
-  mapStateToProps,
-  { logout }
-)(Navbar);
+export default connect(mapStateToProps, { logout })(Navbar);
