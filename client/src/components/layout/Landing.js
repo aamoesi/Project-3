@@ -6,8 +6,8 @@ export const Landing = () => {
     <section className='landing'>
       <div className='dark-overlay'>
         <div className='landing-inner'>
-          <h1 className='x-large'>Welcome to Dajjma!</h1>
-          <p className='lead'>Video Game Awesomeness!</p>
+          <h1 className='x-large'></h1>
+          <p className='lead'></p>
           <div className='buttons'>
             <Link to='/register' className='btn btn-primary'>
               Sign Up

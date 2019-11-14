@@ -17,8 +17,11 @@ body {
   font-family: 'Raleway', sans-serif;
   font-size: 1rem;
   line-height: 1.6;
-  background-color: #fff;
+  /* background-color: #fff; */
+  background-color: lightgray;
   color: #333;
+  /* font-family: 'Share Tech Mono', monospace; */
+  font-family: 'Rajdhani', sans-serif;
 }
 
 a {
@@ -67,11 +70,12 @@ img {
 }
 
 .text-primary {
-  color: var(--primary-color);
+  /* color: var(--primary-color); */
+  color: #1B69E8;
 }
 
 .text-dark {
-  color: var(--dark-color);
+  color: var(--dark-color); 
 }
 
 /* Padding */
@@ -160,8 +164,11 @@ img {
 .bg-primary,
 .badge-primary,
 .alert-primary {
-  background: var(--primary-color);
-  color: #fff;
+  /* background: var(--primary-color); */
+  background: #D5EE1D;
+  color: black;
+  margin-top: 150px;
+  margin-left: 500px;
 }
 
 .btn-light,
@@ -226,7 +233,7 @@ img {
 
 /* Overlay */
 .dark-overlay {
-  background-color: rgba(0, 0, 0, 0.7);
+  /* background-color: rgba(0, 0, 0, 0.2); */
   position: absolute;
   top: 0;
   left: 0;
@@ -308,7 +315,8 @@ button {
   z-index: 1;
   width: 100%;
   top: 0;
-  border-bottom: solid 1px var(--primary-color);
+  /* border-bottom: solid 1px var(--primary-color); */
+  border-bottom: solid 1px #D5EE1D;
   opacity: 0.9;
 }
 
@@ -323,7 +331,8 @@ button {
 }
 
 .navbar a:hover {
-  color: var(--primary-color);
+  /* color: var(--primary-color); */
+  color: #D5EE1D;
 }
 
 .navbar .welcome span {
@@ -334,6 +343,7 @@ button {
 .landing {
   position: relative;
   /* background: url('./img/Dajjma.jpg') no-repeat center center/cover; */
+  background: url('./img/dajjmadark.png') no-repeat center;
   height: 100vh;
 }
 
@@ -574,4 +584,10 @@ button {
   .post button {
     padding: 0.3rem 0.4rem;
   }
+
+  .test-button {
+    padding-top: 400px;
+  }
+
+
 }
