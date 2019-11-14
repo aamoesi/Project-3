@@ -589,5 +589,17 @@ button {
     padding-top: 400px;
   }
 
+  .GameButtonLink {
+    background: none;
+    padding: 10px 20 px;
+    font-size: 20px;
+    font-family: "";
+    cursor: pointer;
+    margin: 10px;
+    transition: 0.8s;
+    position: relative;
+    overflow: hidden;
+  }
+
 
 }
