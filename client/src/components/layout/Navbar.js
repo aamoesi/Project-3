@@ -10,7 +10,8 @@ export const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
       <li>
         <Link to='/dashboard'>
           <i className='fas fa-user' />{' '}
-          <span className='hide-sm'>Dashboard</span></Link>
+          <span className='hide-sm'>Dashboard</span>
+        </Link>
       </li>
       <li>
         <a onClick={logout} href='#!'>
@@ -23,7 +24,7 @@ export const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
   const guestLinks = (
     <ul>
       <li>
-        <a href='!#'>Video Gamers</a>
+        <a href='!#'>Developers</a>
       </li>
       <li>
         <Link to='/register'>Register</Link>
@@ -37,7 +38,7 @@ export const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
     <nav className='navbar bg-dark'>
       <h1>
         <Link to='/'>
-          <i className='fas fa-code' /> Dajjma!
+          <i className='fas fa-code' /> DAJJMA!
         </Link>
       </h1>
       {!loading && (
@@ -56,7 +57,4 @@ const mapStateToProps = state => ({
   auth: state.auth
 });
 
-export default connect(
-  mapStateToProps,
-  { logout }
-)(Navbar);
+export default connect(mapStateToProps, { logout })(Navbar);
