@@ -5,24 +5,44 @@ import { connect } from 'react-redux';
 import Spinner from '../layout/Spinner';
 import { getCurrentProfile } from '../../actions/profile';
 
-const Dashboard = ({ getCurrentProfile, auth: { user }, profile: { profile, loading } }) => {
+const Dashboard = ({
+  getCurrentProfile,
+  auth: { user },
+  profile: { profile, loading }
+}) => {
   useEffect(() => {
     getCurrentProfile();
   }, []);
-  return loading && profile === null ? <Spinner /> : <Fragment>
+  return loading && profile === null ? (
+    <Spinner />
+  ) : (
+    <Fragment>
+      <h1 className='large text-primary'>Dashboard</h1>
+      <p className='lead'>
+        <i className='fas fa-user'></i>Welcome {user && user.name}
+      </p>
+      {profile !== null ? (
+        <Fragment>has</Fragment>
+      ) : (
+        <Fragment>
+          {/* <Link to='/!#' className='btn btn-primary my-1'>
+            Create Profile
+          </Link> */}
+        </Fragment>
+      )}
 
-    <h1 className="large text-primary">Dashboard</h1>
-    <p className="lead">
-      <i className="fas fa-user"></i>Welcome {user && user.name}
-    </p>
-    {profile !== null ? (<Fragment>has</Fragment>) : (
-
-      <Fragment>
-        <p>You have not yet setup a profile, please add some info.</p>
-        <Link to='/create-profile' className="btn btn-light my-1">Video Game 1</Link>
-      </Fragment>)}
-
-  </Fragment>
+      {profile !== null ? (
+        <Fragment>has</Fragment>
+      ) : (
+        <Fragment>
+          {/* <p>You have not yet setup a profile, please add some info.</p> */}
+          <Link to='/Game1' className='btn btn-primary my-1'>
+            Game One
+          </Link>
+        </Fragment>
+      )}
+    </Fragment>
+  );
 };
 
 Dashboard.propTypes = {
@@ -36,7 +56,4 @@ const mapStateToProps = state => ({
   profile: state.profile
 });
 
-export default connect(
-  mapStateToProps,
-  { getCurrentProfile }
-)(Dashboard);
+export default connect(mapStateToProps, { getCurrentProfile })(Dashboard);
