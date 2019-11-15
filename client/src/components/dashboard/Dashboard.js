@@ -36,7 +36,7 @@ const Dashboard = ({
       ) : (
         <Fragment>
           {/* <p>You have not yet setup a profile, please add some info.</p> */}
-          <Link to='/Game1' className='btn btn-primary my-1'>
+          <Link to='/Game1' className='btn btn-light my-1'>
             Game One
           </Link>
         </Fragment>
