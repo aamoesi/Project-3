@@ -6,7 +6,7 @@ import { connect } from 'react-redux';
 
 // import React from 'react';
 import './App.css';
-import Game from '../../components/Games/Game';
+import Game from '../../components/TicTacToe/Game';
 
 function Game1() {
     return (
