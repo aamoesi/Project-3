@@ -18,7 +18,13 @@ body {
   font-size: 1rem;
   line-height: 1.6;
   /* background-color: #fff; */
-  background-color: lightgray;
+  /* background-color: #3C3837; */
+  /* background-image: url("https://i.pinimg.com/originals/01/ff/90/01ff90aecb5f09033386003b20e7836e.jpg"); */
+  background-image: url("https://wallpaperplay.com/walls/full/8/5/4/182577.jpg");
+  /* background-image: url("https://www.xmple.com/wallpaper/lime-green-gradient-linear-1920x1080-c2-6eaf49-9acd32-a-285-f-14.svg"); */
+  /* background-image: url("https://wallpapertag.com/wallpaper/full/f/c/d/239844-solid-green-background-2880x1800-for-samsung.jpg"); */
+  /* background-image: url("https://agileui.com/demo/monarch/assets/image-resources/blurred-bg/blurred-bg-2.jpg"); */
+  background-color: #9EFE6A;
   color: #333;
   /* font-family: 'Share Tech Mono', monospace; */
   font-family: 'Rajdhani', sans-serif;
@@ -139,10 +145,21 @@ img {
   border: none;
   cursor: pointer;
   margin-right: 0.5rem;
-  transition: opacity 0.2s ease-in;
+  /* transition: opacity 0.2s ease-in; */
+  transition: 0.2s;
   outline: none;
+  /* border: 2px solid #1B69E8; */
+  /* border-radius: 4px; */
 }
 
+.btn:hover {
+  color:#333;
+  background: #D5EE1D;
+  box-shadow: 0 0 0 5px #D5EE1D, 0 0 0 5px #D5EE1D, 0 0 5px #D5EE1D;
+  /* transition-delay: 1s; */
+  text-transform: uppercase;
+
+}
 .badge {
   font-size: 0.8rem;
   padding: 0.1rem;
@@ -167,7 +184,7 @@ img {
   /* background: var(--primary-color); */
   background: #d5ee1d;
   color: black;
-  margin-top: 150px;
+  margin-top: 175px;
   margin-left: 500px;
 }
 
@@ -233,7 +250,7 @@ img {
 
 /* Overlay */
 .dark-overlay {
-  /* background-color: rgba(0, 0, 0, 0.2); */
+  /* background-color: rgba(53, 52, 52, 0.5); */
   position: absolute;
   top: 0;
   left: 0;
@@ -316,8 +333,8 @@ button {
   width: 100%;
   top: 0;
   /* border-bottom: solid 1px var(--primary-color); */
-  border-bottom: solid 1px #d5ee1d;
-  opacity: 0.9;
+  border-bottom: solid 1px #D5EE1D;
+  opacity: 0.4;
 }
 
 .navbar ul {
@@ -343,7 +360,8 @@ button {
 .landing {
   position: relative;
   /* background: url('./img/Dajjma.jpg') no-repeat center center/cover; */
-  background: url('./img/dajjmadark.png') no-repeat center;
+  background: url('./img/Dajjam-Logo-Dark.png') no-repeat center;
+  /* background: url("./img/dajjma3.png") no-repeat center; */
   height: 100vh;
 }
 
