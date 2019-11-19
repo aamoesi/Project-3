@@ -77,11 +77,11 @@ img {
 
 .text-primary {
   /* color: var(--primary-color); */
-  color: #1B69E8;
+  color: #1b69e8;
 }
 
 .text-dark {
-  color: var(--dark-color); 
+  color: var(--dark-color);
 }
 
 /* Padding */
@@ -182,7 +182,7 @@ img {
 .badge-primary,
 .alert-primary {
   /* background: var(--primary-color); */
-  background: #D5EE1D;
+  background: #d5ee1d;
   color: black;
   margin-top: 175px;
   margin-left: 500px;
@@ -349,7 +349,7 @@ button {
 
 .navbar a:hover {
   /* color: var(--primary-color); */
-  color: #D5EE1D;
+  color: #d5ee1d;
 }
 
 .navbar .welcome span {
@@ -607,5 +607,15 @@ button {
     padding-top: 400px;
   }
 
-
+  .GameButtonLink {
+    background: none;
+    padding: 10px 20 px;
+    font-size: 20px;
+    font-family: '';
+    cursor: pointer;
+    margin: 10px;
+    transition: 0.8s;
+    position: relative;
+    overflow: hidden;
+  }
 }
