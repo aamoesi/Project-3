@@ -8,6 +8,7 @@ import Alert from './components/layout/Alert';
 import Dashboard from './components/dashboard/Dashboard';
 import Game1 from './components/TicTacToe/Game1';
 import PrivateRoute from './components/routing/PrivateRoute';
+import Tetris from './components/tetris/Tetris';
 import './App.css';
 // Redux
 
@@ -38,8 +39,9 @@ const App = () => {
             <Switch>
               <Route exact path='/Register' component={Register} />
               <Route exact path='/Login' component={Login} />
-              <PrivateRoute exact path='/Dashboard' component={Dashboard} />
-              <PrivateRoute exact path='/Game1' component={Game1} />
+              <Route exact path='/Dashboard' component={Dashboard} />
+              <Route exact path='/Game1' component={Game1} />
+              <Route exact path='/Game2' component={Tetris} />
             </Switch>
           </section>
         </Fragment>
