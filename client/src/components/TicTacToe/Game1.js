@@ -4,16 +4,16 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 // import { Game1 } from '../../actions/profile';
 
-const Game1 = () => {
-  return (
-    <Fragment>
-      <h1>Tic Tac Toe</h1>
-    </Fragment>
-  );
-};
+// import React from 'react';
+import './App.css';
+import Game from '../../components/TicTacToe/Game';
 
-// CreateProfile.propTypes = {
-//   createProfile: PropTypes.func.isRequired
-// };
+function Game1() {
+    return (
+        <Game />
+    );
+}
+
 
 export default connect(null, { Game1 })(withRouter(Game1));
+

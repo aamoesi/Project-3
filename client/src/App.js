@@ -6,7 +6,7 @@ import Register from './components/auth/Register';
 import Login from './components/auth/Login';
 import Alert from './components/layout/Alert';
 import Dashboard from './components/dashboard/Dashboard';
-import Game1 from './components/Games/Game1';
+import Game1 from './components/TicTacToe/Game1';
 import PrivateRoute from './components/routing/PrivateRoute';
 import './App.css';
 // Redux

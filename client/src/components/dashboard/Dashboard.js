@@ -16,33 +16,33 @@ const Dashboard = ({
   return loading && profile === null ? (
     <Spinner />
   ) : (
-    <Fragment>
-      <h1 className='large text-primary'>Dashboard</h1>
-      <p className='lead'>
-        <i className='fas fa-user'></i>Welcome {user && user.name}
-      </p>
-      {profile !== null ? (
-        <Fragment>has</Fragment>
-      ) : (
-        <Fragment>
-          {/* <Link to='/!#' className='btn btn-primary my-1'>
+      <Fragment>
+        <h1 className='large text-primary'>Dashboard</h1>
+        <p className='lead'>
+          <i className='fas fa-user'></i>Welcome {user && user.name}
+        </p>
+        {profile !== null ? (
+          <Fragment>has</Fragment>
+        ) : (
+            <Fragment>
+              {/* <Link to='/!#' className='btn btn-primary my-1'>
             Create Profile
           </Link> */}
-        </Fragment>
-      )}
+            </Fragment>
+          )}
 
-      {profile !== null ? (
-        <Fragment>has</Fragment>
-      ) : (
-        <Fragment>
-          {/* <p>You have not yet setup a profile, please add some info.</p> */}
-          <Link to='/Game1' className='btn btn-light my-1'>
-            Game One
+        {profile !== null ? (
+          <Fragment>has</Fragment>
+        ) : (
+            <Fragment>
+              {/* <p>You have not yet setup a profile, please add some info.</p> */}
+              <Link to='/Game1' className='btn btn-light my-1'>
+                Simple Tic Tac Toe
           </Link>
-        </Fragment>
-      )}
-    </Fragment>
-  );
+            </Fragment>
+          )}
+      </Fragment>
+    );
 };
 
 Dashboard.propTypes = {
