@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import Spinner from '../layout/Spinner';
 import { getCurrentProfile } from '../../actions/profile';
+import Gamefeed from '../Gamefeed'
 
 const Dashboard = ({
   getCurrentProfile,
@@ -39,6 +40,7 @@ const Dashboard = ({
               <Link to='/Game1' className='btn btn-light my-1'>
                 Simple Tic Tac Toe
           </Link>
+          <Gamefeed />
             </Fragment>
           )}
       </Fragment>

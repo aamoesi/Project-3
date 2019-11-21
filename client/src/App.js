@@ -7,6 +7,7 @@ import Login from './components/auth/Login';
 import Alert from './components/layout/Alert';
 import Dashboard from './components/dashboard/Dashboard';
 import Game1 from './components/TicTacToe/Game1';
+import Mergeit from './components/games/Mergeit';
 import PrivateRoute from './components/routing/PrivateRoute';
 import './App.css';
 // Redux
@@ -39,7 +40,10 @@ const App = () => {
               <Route exact path='/Register' component={Register} />
               <Route exact path='/Login' component={Login} />
               <PrivateRoute exact path='/Dashboard' component={Dashboard} />
+              {/* Games Developed by DAJJMA */}
               <PrivateRoute exact path='/Game1' component={Game1} />
+              {/* Games Developed by Other Developers */}
+              <PrivateRoute exact path='/games/mergeit' component={Mergeit} />
             </Switch>
           </section>
         </Fragment>
