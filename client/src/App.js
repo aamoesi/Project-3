@@ -9,6 +9,7 @@ import Dashboard from './components/dashboard/Dashboard';
 import Game1 from './components/TicTacToe/Game1';
 import Mergeit from './components/games/Mergeit';
 import PrivateRoute from './components/routing/PrivateRoute';
+import Tetris from './components/tetris/Tetris';
 import './App.css';
 // Redux
 
@@ -42,6 +43,7 @@ const App = () => {
               <PrivateRoute exact path='/Dashboard' component={Dashboard} />
               {/* Games Developed by DAJJMA */}
               <PrivateRoute exact path='/Game1' component={Game1} />
+              <PrivateRoute exact path='/Game2' component={Tetris} />
               {/* Games Developed by Other Developers */}
               <PrivateRoute exact path='/games/mergeit' component={Mergeit} />
             </Switch>

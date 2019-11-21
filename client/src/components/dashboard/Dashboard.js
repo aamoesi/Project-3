@@ -39,8 +39,10 @@ const Dashboard = ({
               {/* <p>You have not yet setup a profile, please add some info.</p> */}
               <Link to='/Game1' className='btn btn-light my-1'>
                 Simple Tic Tac Toe
-          </Link>
-          <Gamefeed />
+              </Link>
+              <Link to='/Game2' className='btn btn-light my-1'>
+                Tetris
+              </Link>
             </Fragment>
           )}
       </Fragment>
