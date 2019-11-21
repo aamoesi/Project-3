@@ -7,6 +7,7 @@ import Login from './components/auth/Login';
 import Alert from './components/layout/Alert';
 import Dashboard from './components/dashboard/Dashboard';
 import Game1 from './components/TicTacToe/Game1';
+import Mergeit from './components/games/Mergeit';
 import PrivateRoute from './components/routing/PrivateRoute';
 import Tetris from './components/tetris/Tetris';
 import './App.css';
@@ -39,9 +40,12 @@ const App = () => {
             <Switch>
               <Route exact path='/Register' component={Register} />
               <Route exact path='/Login' component={Login} />
-              <Route exact path='/Dashboard' component={Dashboard} />
-              <Route exact path='/Game1' component={Game1} />
-              <Route exact path='/Game2' component={Tetris} />
+              <PrivateRoute exact path='/Dashboard' component={Dashboard} />
+              {/* Games Developed by DAJJMA */}
+              <PrivateRoute exact path='/Game1' component={Game1} />
+              <PrivateRoute exact path='/Game2' component={Tetris} />
+              {/* Games Developed by Other Developers */}
+              <PrivateRoute exact path='/games/mergeit' component={Mergeit} />
             </Switch>
           </section>
         </Fragment>
