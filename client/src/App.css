@@ -132,6 +132,7 @@ img {
   display: inline-block;
   background: var(--light-color);
   color: #0c038f;
+  opacity: 0.7;
   padding: 0.4rem 1.3rem;
   font-size: 1rem;
   border: none;
@@ -376,6 +377,7 @@ button {
 .navbar .welcome span {
   margin-right: 0.6rem;
 }
+
 
 /* Landing Page */
 .landing {
