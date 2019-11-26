@@ -61,6 +61,7 @@ const Login = ({ login, isAuthenticated }) => {
     </Fragment>
   );
 };
+console.log("test");
 
 Login.propTypes = {
   login: PropTypes.func.isRequired,
