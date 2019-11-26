@@ -45,6 +45,15 @@ const Dashboard = ({
               </Link>
             </Fragment>
           )}
+
+        {profile !== null ? (
+          <Fragment>has</Fragment>
+        ) : (
+            <Fragment>
+              <Gamefeed />
+            </Fragment>
+          )}
+
       </Fragment>
     );
 };
