@@ -18,8 +18,19 @@ body {
   font-size: 1rem;
   line-height: 1.6;
   background-image: url("https://wallpaperplay.com/walls/full/8/5/4/182577.jpg");
-  background-color: #9EFE6A;
   color: #333;
+}
+
+input {
+  border-radius: 100px;
+}
+
+.fas {
+  color: #dfdce0;
+}
+
+.lead {
+  color: #dfdce0;
 }
 
 a {
@@ -69,7 +80,7 @@ img {
 
 .text-primary {
   /* color: var(--primary-color); */
-  color: #0c038f;
+  color: #dfdce0;
 }
 
 .text-dark {
@@ -140,17 +151,18 @@ img {
   margin-right: 0.5rem;
   /* transition: 0.2s; */
   outline: none;
-  border-radius: 10px;
+  border-radius: 50px;
   /* transition: color 0.4s linear; */
   position: relative;
 }
 
 .btn:hover {
-  color: #f7f5fa;
+  /* color: #f7f5fa; */
+  color: #0c038f;
   /* text-transform: uppercase; */
   /* color: white; */
-  background: #0c038f;
-  box-shadow: 0 0 10px #0c038f, 0 0 40px #0c038f, 0 0 80px #0c038f;
+  background: #f7f5fa;
+  box-shadow: 0 0 10px #f7f5fa, 0 0 40px #f7f5fa, 0 0 80px #f7f5fa;
 
 }
 
@@ -196,8 +208,8 @@ img {
 .badge-primary,
 .alert-primary {
   /* background: var(--primary-color); */
-  background: #0c038f;
-  color: #f7f5fa;
+  background: #f7f5fa;
+  color: #0c038f;
   margin-top: 200px;
   margin-left: 550px;
 }
@@ -206,15 +218,16 @@ img {
 .bg-light,
 .badge-light,
 .alert-light {
-  background: var(--light-color);
-  color: #0c038f;
+  background: #0c038f; 
+  color: #f7f5fa;
+  
 }
 
 .btn-light:hover {
-  color: #0c038f;
+  color: #f7f5fa;
   /* text-transform: uppercase; */
-  background: #f7f5fa;
-  box-shadow: 0 0 10px #f7f5fa, 0 0 40px #f7f5fa, 0 0 80px #f7f5fa;
+  background: #0c038f;
+  box-shadow: 0 0 10px #0c038f, 0 0 40px #0c038f, 0 0 80px #0c038f;
 
 }
 
@@ -354,24 +367,29 @@ button {
   z-index: 1;
   width: 100%;
   top: 0;
-  /* border-bottom: solid 1px var(--primary-color); */
-  border-bottom: solid 1px #0c038f;
+  border-bottom: solid 1px white;
+  background-color: rgb(211, 210, 212);
   opacity: 0.4;
+  filter: alpha(opacity=40);
+  color: black;
 }
+
+
 
 .navbar ul {
   display: flex;
 }
 
 .navbar a {
-  color: #fff;
+  /* color: #0c038f; */
+  color: black;
   padding: 0.45rem;
   margin: 0 0.25rem;
 }
 
 .navbar a:hover {
   /* color: var(--primary-color); */
-  color: #f7f5fa;
+  color: black;
 }
 
 .navbar .welcome span {
@@ -546,6 +564,7 @@ button {
 
   .hide-sm {
     display: none;
+    color: white;
   }
 
   /* Text Styles */
@@ -662,5 +681,9 @@ button {
 }
 
 .App-link {
-  color: #09d3ac;
+  color: #f6f8f8;
+}
+
+.signIn {
+  color: #0c038f;
 }
