@@ -24,13 +24,19 @@ export const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
   const guestLinks = (
     <ul>
       <li>
-        <a href='!#'>Developers</a>
+        <Link to='/adminregister'>ADMIN REGISTER</Link>
       </li>
       <li>
-        <Link to='/register'>Register</Link>
+        <Link to='/adminlogin'>ADMIN LOGIN</Link>
       </li>
       <li>
-        <Link to='/login'>Login</Link>
+        <Link to='/register'>USER REGISTER</Link>
+      </li>
+      <li>
+        <Link to='/login'>USER LOGIN</Link>
+      </li>
+      <li>
+        <a href='/#!'>LOGOUT</a>
       </li>
     </ul>
   );
@@ -38,7 +44,7 @@ export const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
     <nav className='navbar bg-dark'>
       <h1>
         <Link to='/'>
-          <i className='fas fa-code' /> DAJJMA!
+          <i className='' /> DAJJMA!
         </Link>
       </h1>
       {!loading && (

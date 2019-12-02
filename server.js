@@ -4,6 +4,8 @@ const path = require('path');
 
 const app = express();
 
+app.get('/', (req, res) => res.send('API Running'));
+
 // Connect Database
 connectDB();
 
@@ -19,6 +21,10 @@ app.use('/api/users', require('./routes/api/users'));
 app.use('/api/auth', require('./routes/api/auth'));
 app.use('/api/profile', require('./routes/api/profile'));
 app.use('/api/posts', require('./routes/api/posts'));
+app.use('/api/adminUsers', require('./routes/api/adminUsers'));
+app.use('/api/adminAuth', require('./routes/api/adminAuth'));
+app.use('/api/adminProfile', require('./routes/api/adminProfile'));
+app.use('/api/adminPosts', require('./routes/api/adminPosts'));
 
 // Serve static assets in production
 if (process.env.NODE_ENV === 'production') {
