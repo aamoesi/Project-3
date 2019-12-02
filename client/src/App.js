@@ -2,8 +2,13 @@ import React, { Fragment, useEffect } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Navbar from './components/layout/Navbar';
 import Landing from './components/layout/Landing';
+
+import AdminRegister from './components/auth/AdminRegister';
+import AdminLogin from './components/auth/AdminLogin';
+
 import Register from './components/auth/Register';
 import Login from './components/auth/Login';
+
 import Alert from './components/layout/Alert';
 import Dashboard from './components/dashboard/Dashboard';
 import PrivateRoute from './components/routing/PrivateRoute';
@@ -45,6 +50,10 @@ const App = () => {
             <Switch>
               <Route exact path='/Register' component={Register} />
               <Route exact path='/Login' component={Login} />
+
+              <Route exact path='/AdminRegister' component={AdminRegister} />
+              <Route exact path='/AdminLogin' component={AdminLogin} />
+
               <Route exact path='/administrators' component={adminSpinner} />
               <PrivateRoute exact path='/Dashboard' component={Dashboard} />
               {/* Games Developed by DAJJMA */}
