@@ -7,6 +7,7 @@ import Login from './components/auth/Login';
 import Alert from './components/layout/Alert';
 import Dashboard from './components/dashboard/Dashboard';
 import PrivateRoute from './components/routing/PrivateRoute';
+import adminSpinner from './components/administrators/adminSpinner'
 // Games Produced by DAJJMA!
 import Game1 from './components/TicTacToe/Game1';
 import Tetris from './components/tetris/Tetris';
@@ -44,6 +45,7 @@ const App = () => {
             <Switch>
               <Route exact path='/Register' component={Register} />
               <Route exact path='/Login' component={Login} />
+              <Route exact path='/administrators' component={adminSpinner} />
               <PrivateRoute exact path='/Dashboard' component={Dashboard} />
               {/* Games Developed by DAJJMA */}
               <PrivateRoute exact path='/Game1' component={Game1} />
