@@ -24,13 +24,19 @@ export const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
   const guestLinks = (
     <ul>
       <li>
-        <a href='!#'>DEVELOPERS</a>
+        <Link to='/adminregister'>ADMIN REGISTER</Link>
       </li>
       <li>
-        <Link to='/register'>REGISTER</Link>
+        <Link to='/adminlogin'>ADMIN LOGIN</Link>
       </li>
       <li>
-        <Link to='/login'>LOGIN</Link>
+        <Link to='/register'>USER REGISTER</Link>
+      </li>
+      <li>
+        <Link to='/login'>USER LOGIN</Link>
+      </li>
+      <li>
+        <a href='/#!'>LOGOUT</a>
       </li>
     </ul>
   );

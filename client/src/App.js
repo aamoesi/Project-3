@@ -2,11 +2,18 @@ import React, { Fragment, useEffect } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Navbar from './components/layout/Navbar';
 import Landing from './components/layout/Landing';
+
+import AdminRegister from './components/auth/AdminRegister';
+import AdminLogin from './components/auth/AdminLogin';
+
 import Register from './components/auth/Register';
 import Login from './components/auth/Login';
+
 import Alert from './components/layout/Alert';
 import Dashboard from './components/dashboard/Dashboard';
+import adminDashboard from './components/dashboard/adminDashboard';
 import PrivateRoute from './components/routing/PrivateRoute';
+import adminSpinner from './components/administrators/adminSpinner'
 // Games Produced by DAJJMA!
 import Game1 from './components/TicTacToe/Game1';
 import Tetris from './components/tetris/Tetris';
@@ -44,7 +51,14 @@ const App = () => {
             <Switch>
               <Route exact path='/Register' component={Register} />
               <Route exact path='/Login' component={Login} />
-              <PrivateRoute exact path='/Dashboard' component={Dashboard} />
+
+              <Route exact path='/AdminRegister' component={AdminRegister} />
+              <Route exact path='/AdminLogin' component={AdminLogin} />
+
+              <Route exact path='/administrators' component={adminSpinner} />
+              <Route exact path='/Dashboard' component={Dashboard} />
+              <Route exact path='/adminDashboard' component={adminDashboard} />
+
               {/* Games Developed by DAJJMA */}
               <PrivateRoute exact path='/Game1' component={Game1} />
               <PrivateRoute exact path='/Game2' component={Tetris} />
