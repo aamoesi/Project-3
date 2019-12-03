@@ -17,6 +17,7 @@ import adminSpinner from './components/administrators/adminSpinner'
 // Games Produced by DAJJMA!
 import Game1 from './components/TicTacToe/Game1';
 import Tetris from './components/tetris/Tetris';
+import PokemonClicky from './components/games/pokemon-clicky/PokemonClicky';
 // Games Produced by Other Developers
 import Mergeit from './components/games/Mergeit';
 import Tentenhex from './components/games/1010hex';
@@ -62,7 +63,7 @@ const App = () => {
               {/* Games Developed by DAJJMA */}
               <PrivateRoute exact path='/Game1' component={Game1} />
               <PrivateRoute exact path='/Game2' component={Tetris} />
-              {/* <PrivateRoute exact path='/PoKeMoN-Clicky' component={PokemonClicky} /> */}
+              <PrivateRoute exact path='/pokemon-clicky' component={PokemonClicky} />
               {/* Games Developed by Other Developers */}
               <PrivateRoute exact path='/games/mergeit' component={Mergeit} />
               <PrivateRoute exact path='/games/1010hex' component={Tentenhex} />

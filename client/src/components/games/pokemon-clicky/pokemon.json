@@ -1,0 +1,50 @@
+[
+    {
+        "pkmn": "popplio",
+        "image": "https://img.pokemondb.net/artwork/popplio.jpg"
+    },
+    {
+        "pkmn": "marill",
+        "image": "https://img.pokemondb.net/artwork/marill.jpg"
+    },
+    {
+        "pkmn": "squirtle",
+        "image": "https://img.pokemondb.net/artwork/large/squirtle.jpg"
+    },
+    {
+        "pkmn": "gyarados",
+        "image": "https://img.pokemondb.net/artwork/gyarados.jpg"
+    },
+    {
+        "pkmn": "spheal",
+        "image": "https://img.pokemondb.net/artwork/spheal.jpg"
+    },
+    {
+        "pkmn": "wailmer",
+        "image": "https://img.pokemondb.net/artwork/wailmer.jpg"
+    },
+    {
+        "pkmn": "vaporeon",
+        "image": "https://img.pokemondb.net/artwork/large/vaporeon.jpg"
+    },
+    {
+        "pkmn": "glaceon",
+        "image": "https://img.pokemondb.net/artwork/glaceon.jpg"
+    },
+    {
+        "pkmn": "azurill",
+        "image": "https://img.pokemondb.net/artwork/azurill.jpg"
+    },
+    {
+        "pkmn": "articuno",
+        "image": "https://img.pokemondb.net/artwork/large/articuno.jpg"
+    },
+    {
+        "pkmn": "wooper",
+        "image": "https://img.pokemondb.net/artwork/wooper.jpg"
+    },
+    {
+        "pkmn": "sealeo",
+        "image": "https://img.pokemondb.net/artwork/sealeo.jpg"
+    }
+]
