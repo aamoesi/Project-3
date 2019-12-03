@@ -1,0 +1,18 @@
+.instructionsbox {
+    width: 100%;
+    text-align: center;
+    vertical-align: center;
+    font-family: 'McLaren', cursive;
+    color: #555555;
+    text-shadow: 0 0 5px #ffffff;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.instructionsbox h1 {
+    font-size: 3.5em;
+}
+
+.instructionsbox p {
+    font-size: 1.8em;
+}

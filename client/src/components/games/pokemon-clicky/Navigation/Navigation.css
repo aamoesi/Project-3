@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css?family=Bowlby+One+SC&display=swap');
+
+.nav-pills {
+    display: block;
+    
+    background: #222;
+    width: 100%;
+    text-align: center;
+    -webkit-box-shadow: 0 14px 28px rgba(0,0,0,.25), 0 10px 10px rgba(0,0,0,.22);
+    box-shadow: 0 14px 28px rgba(0,0,0,.25), 0 10px 10px rgba(0,0,0,.22);
+    color: #fff;
+    font-family: 'Bowlby One SC', cursive;
+    font-size: 1.5em;
+    font-weight: normal;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 25px;
+}
+
+.nav-pills a {
+    color: #fff;
+}
+
+.nav-pills a:hover {
+    color: #fff;
+    background-color: rgb(77, 183, 233) !important;
+}
+
+.desc-normal {
+    color: #fff;
+}
+
+.desc-correct {
+    color: rgb(77, 183, 2331);
+}
+
+.desc-incorrect {
+    color: #f00;
+}

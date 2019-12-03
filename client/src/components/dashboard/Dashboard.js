@@ -43,6 +43,9 @@ const Dashboard = ({
               <Link to='/Game2' className='btn btn-light my-1'>
                 Tetris
               </Link>
+              <Link to='/pokemon-clicky' className='btn btn-light my-1'>
+                Pokemon Clicky
+              </Link>
             </Fragment>
           )}
 
