@@ -57,8 +57,8 @@ const App = () => {
               <Route exact path='/AdminLogin' component={AdminLogin} />
 
               <Route exact path='/administrators' component={adminSpinner} />
-              <Route exact path='/Dashboard' component={Dashboard} />
-              <Route exact path='/adminDashboard' component={adminDashboard} />
+              <PrivateRoute exact path='/Dashboard' component={Dashboard} />
+              <PrivateRoute exact path='/adminDashboard' component={adminDashboard} />
 
               {/* Games Developed by DAJJMA */}
               <PrivateRoute exact path='/Game1' component={Game1} />
