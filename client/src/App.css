@@ -691,8 +691,11 @@ button {
   color: #0c038f;
 }
 
-.Twitch.Embed{
+#Twitch.Embed{
   float: right;
   position: relative;
   margin: auto;
+  padding: 0%;
+  margin: 0%;
+  
 }
