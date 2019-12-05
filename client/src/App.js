@@ -36,6 +36,34 @@ if (localStorage.token) {
   setAuthToken(localStorage.token);
 }
 
+function MainSwitch({ location }) {
+  return (
+    <section className={location.pathname !== "/pokemon-clicky" ? "container" : ""}>
+      <Alert />
+      <Switch>
+        <Route exact path='/Register' component={Register} />
+        <Route exact path='/Login' component={Login} />
+
+        <Route exact path='/AdminRegister' component={AdminRegister} />
+        <Route exact path='/AdminLogin' component={AdminLogin} />
+
+        <Route exact path='/administrators' component={adminSpinner} />
+        <Route exact path='/Dashboard' component={Dashboard} />
+        <Route exact path='/adminDashboard' component={adminDashboard} />
+
+        {/* Games Developed by DAJJMA */}
+        <PrivateRoute exact path='/Game1' component={Game1} />
+        <PrivateRoute exact path='/Game2' component={Tetris} />
+        <PrivateRoute exact path='/pokemon-clicky' component={PokemonClicky} />
+        {/* Games Developed by Other Developers */}
+        <PrivateRoute exact path='/games/mergeit' component={Mergeit} />
+        <PrivateRoute exact path='/games/1010hex' component={Tentenhex} />
+        <PrivateRoute exact path='/games/mainpower' component={Mainpower} />
+      </Switch>
+    </section>
+  )
+};
+
 const App = () => {
   useEffect(() => {
     store.dispatch(loadUser());
@@ -47,33 +75,13 @@ const App = () => {
         <Fragment>
           <Navbar />
           <Route exact path='/' component={Landing} />
-          <section className='container'>
-            <Alert />
-            <Switch>
-              <Route exact path='/Register' component={Register} />
-              <Route exact path='/Login' component={Login} />
-
-              <Route exact path='/AdminRegister' component={AdminRegister} />
-              <Route exact path='/AdminLogin' component={AdminLogin} />
-
-              <Route exact path='/administrators' component={adminSpinner} />
-              <Route exact path='/Dashboard' component={Dashboard} />
-              <Route exact path='/adminDashboard' component={adminDashboard} />
-
-              {/* Games Developed by DAJJMA */}
-              <PrivateRoute exact path='/Game1' component={Game1} />
-              <PrivateRoute exact path='/Game2' component={Tetris} />
-              <PrivateRoute exact path='/pokemon-clicky' component={PokemonClicky} />
-              {/* Games Developed by Other Developers */}
-              <PrivateRoute exact path='/games/mergeit' component={Mergeit} />
-              <PrivateRoute exact path='/games/1010hex' component={Tentenhex} />
-              <PrivateRoute exact path='/games/mainpower' component={Mainpower} />
-            </Switch>
-          </section>
+          <Route path = "/" component={MainSwitch} />
         </Fragment>
       </Router>
     </Provider>
   );
 };
+
+
 
 export default App;
