@@ -690,3 +690,9 @@ button {
 .signIn {
   color: #0c038f;
 }
+
+.Twitch.Embed{
+  float: right;
+  position: relative;
+  margin: auto;
+}
