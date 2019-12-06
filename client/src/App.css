@@ -22,7 +22,10 @@ body {
   background-color: #9EFE6A;
 
   color: #333;
+ 
+  height: 95vh;
 }
+
 
 input {
   border-radius: 100px;
@@ -694,5 +697,4 @@ button {
 #twitch-embed{
   position: relative;
   float: right;
-  display: block;
 }
