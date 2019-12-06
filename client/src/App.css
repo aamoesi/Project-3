@@ -697,5 +697,5 @@ button {
   margin: auto;
   padding: 0%;
   margin: 0%;
-  display: none
+  display: block;
 }
