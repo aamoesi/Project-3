@@ -13,7 +13,7 @@
   padding: 0;
 }
 
-html, body {
+body {
   font-family: 'Questrial', sans-serif;
   font-size: 1rem;
   line-height: 1.6;
@@ -22,8 +22,13 @@ html, body {
   background-color: #9EFE6A;
 
   color: #333;
- 
-  width: auto;
+  width: 100%;
+  width: 100%;
+
+}
+#html{
+  width: 100%;
+  height: 100%;
 }
 
 
