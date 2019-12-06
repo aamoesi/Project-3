@@ -694,5 +694,5 @@ button {
 #twitch-embed{
   position: relative;
   float: right;
-
+  display: block;
 }
