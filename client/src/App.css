@@ -692,10 +692,7 @@ button {
 }
 
 #twitch-embed{
-  float: right;
   position: relative;
-  margin: auto;
-  padding: 0%;
-  margin: 0%;
-  display: block;
+  float: right;
+
 }
