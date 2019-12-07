@@ -20,9 +20,9 @@ const Dashboard = ({
     <Spinner />
   ) : (
     <Fragment>
-      <h1 className='large text-primary'>Admin Dashboard</h1>
+      <h1 className='large text-primary'>ADMIN DASHBOARD</h1>
       <p className='lead'>
-        <i className='fas fa-user'></i>Welcome {user && user.name}
+        <i className='fas fa-user'></i> Welcome {user && user.name}
       </p>
       {profile !== null ? (
         <Fragment>has</Fragment>
