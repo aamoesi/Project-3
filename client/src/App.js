@@ -10,6 +10,9 @@ import Alert from './components/layout/Alert';
 import Dashboard from './components/dashboard/Dashboard';
 import adminDashboard from './components/dashboard/adminDashboard';
 import EditAdminProfile from '../src/components/profile-forms/editAdminProfile';
+import CreateProfile from '../src/components/profile-forms/CreateProfile';
+import EditProfile from '../src/components/profile-forms/EditProfile';
+import CreateAdminProfile from '../src/components/profile-forms/createAdminProfile';
 import PrivateRoute from './components/routing/PrivateRoute';
 import adminSpinner from './components/administrators/adminSpinner';
 import Twitch from './components/Twitch'
@@ -50,16 +53,47 @@ const App = () => {
               <Route exact path='/AdminLogin' component={AdminLogin} />
               <Route exact path='/administrators' component={adminSpinner} />
               <PrivateRoute exact path='/Dashboard' component={Dashboard} />
-              <PrivateRoute exact path='/adminDashboard' component={adminDashboard} />
-              <PrivateRoute exact path='/edit-profile' component={EditAdminProfile} />
+              <PrivateRoute
+                exact
+                path='/create-profile'
+                component={CreateProfile}
+              />
+              <PrivateRoute
+                exact
+                path='/adminDashboard'
+                component={adminDashboard}
+              />
+              <PrivateRoute
+                exact
+                path='/create-profile'
+                component={CreateProfile}
+              />
+              <PrivateRoute
+                exact
+                path='/adminDashboard'
+                component={adminDashboard}
+              />
+              <PrivateRoute
+                exact
+                path='/edit-profile'
+                component={EditProfile}
+              />
               {/* Games Developed by DAJJMA */}
               <PrivateRoute exact path='/Game1' component={Game1} />
               <PrivateRoute exact path='/Game2' component={Tetris} />
-              <PrivateRoute exact path='/pokemon-clicky' component={PokemonClicky} />
+              <PrivateRoute
+                exact
+                path='/pokemon-clicky'
+                component={PokemonClicky}
+              />
               {/* Games Developed by Other Developers */}
               <PrivateRoute exact path='/games/mergeit' component={Mergeit} />
               <PrivateRoute exact path='/games/1010hex' component={Tentenhex} />
-              <PrivateRoute exact path='/games/mainpower' component={Mainpower} />
+              <PrivateRoute
+                exact
+                path='/games/mainpower'
+                component={Mainpower}
+              />
             </Switch>
             <Twitch/>
           </section>

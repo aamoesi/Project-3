@@ -17,10 +17,7 @@ body, html {
   font-family: 'Questrial', sans-serif;
   font-size: 1rem;
   line-height: 1.6;
-
-  background-image: url("../src/img/dajjma-background.png");
-  background-color: #9EFE6A;
-
+  background: url("../src/img/dajjma-background.png") no-repeat center center fixed;
   color: #333;
   height: 100%;
   width: 100%;
@@ -61,7 +58,7 @@ img {
   margin: auto;
   overflow: hidden;
   padding: 0 2rem;
-  margin-top: 6rem;
+  margin-top: 4rem;
   margin-bottom: 3rem;
 }
 
@@ -172,11 +169,10 @@ img {
   /* color: white; */
   background: #f7f5fa;
   box-shadow: 0 0 10px #f7f5fa, 0 0 40px #f7f5fa, 0 0 80px #f7f5fa;
-
 }
 
 .btn::before {
-  content: "";
+  content: '';
   position: absolute;
   left: 0;
   top: 0;
@@ -223,8 +219,12 @@ img {
   margin-left: 550px;
 }
 
-.btn-primaryAdmn
- {
+.boldText {
+ 
+  color: white;
+}
+
+.btn-primaryAdmn {
   /* background: var(--primary-color); */
   background: #f7f5fa;
   color: #0c038f;
@@ -232,15 +232,12 @@ img {
   margin-left: 20px;
 }
 
-
-
 .btn-light,
 .bg-light,
 .badge-light,
 .alert-light {
-  background: #0c038f; 
+  background: #0c038f;
   color: #f7f5fa;
-  
 }
 
 .btn-light:hover {
@@ -248,7 +245,6 @@ img {
   /* text-transform: uppercase; */
   background: #0c038f;
   box-shadow: 0 0 10px #0c038f, 0 0 40px #0c038f, 0 0 80px #0c038f;
-
 }
 
 .btn-dark,
@@ -394,8 +390,6 @@ button {
   color: black;
 }
 
-
-
 .navbar ul {
   display: flex;
 }
@@ -415,7 +409,6 @@ button {
 .navbar .welcome span {
   margin-right: 0.6rem;
 }
-
 
 /* Landing Page */
 .landing {
@@ -620,14 +613,14 @@ button {
   }
 
   /* Profiles Page */
-  .profile {
+  /* .profile {
     grid-template-columns: 1fr;
     text-align: center;
   }
 
   .profile ul {
     display: none;
-  }
+  } */
 
   /* Profile Page */
 
@@ -708,14 +701,13 @@ button {
   color: #0c038f;
 }
 
-#twitch-embed{
-  position: relative;
-  float: right;
-  padding-top: 30px;
-  padding-bottom: 56.25;
-  overflow: hidden;
-  top: 300;
-  left: 300;
-
-
+.game {
+  background: url('../src/img/2d-tic-tac-toe.png') no-repeat;
+  width: 1400px;
+  height: 700px;
+  padding-left: 250px;
+  padding-top: 50px;
 }
+
+
+
