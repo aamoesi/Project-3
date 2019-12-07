@@ -22,11 +22,11 @@ body, html {
   background-color: #9EFE6A;
 
   color: #333;
-  height: 100vh;
+  height: 100hv;
   width: 100%;
+  position: fixed;
   overflow-x: hidden;
-  margin: auto;
-  padding: 0px;
+  top: 0;
 
 }
 
@@ -711,5 +711,4 @@ button {
 #twitch-embed{
   position: relative;
   float: right;
-
 }
