@@ -71,7 +71,7 @@ const AdminLogin = ({ login, isAuthenticated }) => {
                         minLength="6"
                     />
                 </div>
-                <input type="submit" className="btn btn-primary" value="Login" />
+                <input type="submit" className="btn btn-primaryAdmn" value="Login" />
             </form>
             <p className="my-1">
                 Don't have an Admin Account? <Link to="/AdminRegister" className='signIn'>Create Account</Link>
