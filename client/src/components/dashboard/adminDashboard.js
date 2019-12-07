@@ -1,33 +1,95 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import React, { Fragment, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import Spinner from '../layout/Spinner';
+// import { getCurrentAdminProfile } from '../../actions/adminProfile';
+import { getCurrentProfile } from '../../actions/profile';
+import { privateDecrypt } from 'crypto';
 
-const adminDashboard = props => {
-    return (
-        <h1>
+const Dashboard = ({
+  getCurrentProfile,
+  auth: { user },
+  profile: { profile, loading }
+}) => {
+  useEffect(() => {
+    getCurrentProfile();
+  }, []);
 
-            This will be our ADMIN Dashboard.
-            <br />
+  return loading && profile === null ? (
+    <Spinner />
+  ) : (
+    <Fragment>
+      <h1 className='large text-primary'>Admin Dashboard</h1>
+      <p className='lead'>
+        <i className='fas fa-user'></i>Welcome {user && user.name}
+      </p>
+      {profile !== null ? (
+        <Fragment>has</Fragment>
+      ) : (
+        <Fragment>
+          <p className='boldText'>
+            You have not yet setup a profile, please add some info
+          </p>
+          <Link to='/create-profile' className='btn btn-primaryAdmn my-1'>
+            Create Profile
+          </Link>
+        </Fragment>
+      )}
+    </Fragment>
+  );
+};
 
-            Goals for this dashoard:
-            <br />
-            1. Display users progress with games.
-            <br />
-            2. Have area for Admin users to keep notes and track progress.
-            <br />
-            3. Administrators comments.
-            <br />
-            4. Inoformation about patients.
-            <br />
-            5. Information about Administrators.
+Dashboard.propTypes = {
+  getCurrentProfile: PropTypes.func.isRequired,
+  auth: PropTypes.object.isRequired,
+  profile: PropTypes.object.isRequired
+};
 
-        </h1>
+const mapStateToProps = state => ({
+  auth: state.auth,
+  profile: state.profile
+});
 
+export default connect(mapStateToProps, { getCurrentProfile })(Dashboard);
 
-    )
+// const Dashboard = ({ getCurrentAdminProfile, auth, profile }) => {
+//   useEffect(() => {
+//     getCurrentAdminProfile();
+//   }, [getCurrentAdminProfile]);
+// };
+
+// const adminDashboard = props => {
+//   return (
+// <Spinner />
+
+// <Fragment>
+//   <h1 className='large text-primary'>Administrative Dashboard</h1>
+
+{
+  /* <p className='lead'>
+            <i className='fas fa-user' /> Welcome {userAdmin && userAdmin.name}
+          </p> */
 }
 
-adminDashboard.propTypes = {
+//       <Fragment>
+//         <AdminDashboardActions />
+//       </Fragment>
+//     </Fragment>
+//   );
+// };
+// }
 
-}
+// adminDashboard.propTypes = {
 
-export default adminDashboard
+//     getCurrentAdminProfile: PropTypes.func.isRequired,
+//     auth: PropTypes.object.isRequired,
+//     profile: PropTypes.object.isRequired
+// }
+
+// const mapStateToProps = state => ({
+//     auth: state.auth,
+//     profile: state.profile,
+// })
+
+// export default connect(mapStateToProps, { getCurrentAdminProfile })(adminDashboard);

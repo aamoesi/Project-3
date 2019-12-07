@@ -163,11 +163,10 @@ img {
   /* color: white; */
   background: #f7f5fa;
   box-shadow: 0 0 10px #f7f5fa, 0 0 40px #f7f5fa, 0 0 80px #f7f5fa;
-
 }
 
 .btn::before {
-  content: "";
+  content: '';
   position: absolute;
   left: 0;
   top: 0;
@@ -214,13 +213,25 @@ img {
   margin-left: 550px;
 }
 
+.boldText {
+ 
+  color: white;
+}
+
+.btn-primaryAdmn {
+  /* background: var(--primary-color); */
+  background: #f7f5fa;
+  color: #0c038f;
+  margin-top: 10px;
+  margin-left: 20px;
+}
+
 .btn-light,
 .bg-light,
 .badge-light,
 .alert-light {
-  background: #0c038f; 
+  background: #0c038f;
   color: #f7f5fa;
-  
 }
 
 .btn-light:hover {
@@ -228,7 +239,6 @@ img {
   /* text-transform: uppercase; */
   background: #0c038f;
   box-shadow: 0 0 10px #0c038f, 0 0 40px #0c038f, 0 0 80px #0c038f;
-
 }
 
 .btn-dark,
@@ -374,8 +384,6 @@ button {
   color: black;
 }
 
-
-
 .navbar ul {
   display: flex;
 }
@@ -395,7 +403,6 @@ button {
 .navbar .welcome span {
   margin-right: 0.6rem;
 }
-
 
 /* Landing Page */
 .landing {

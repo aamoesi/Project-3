@@ -22,6 +22,7 @@ const Gamefeed = props => (
                 style={{ width: 300, height: 200, padding: 15, borderRadius: 25 }}
                 src='https://www.htmlgames.com/uploaded/thumb500/1010hex500.jpg'
             />
+            {/* Note: need to do like app switch here booleon if hover not hover then reference correct string (static image vs animated gif) */}
         </Link>
         <Link to="/games/mainpower">
             <img
