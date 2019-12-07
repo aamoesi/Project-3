@@ -29,8 +29,6 @@ const AdminLogin = ({ login, isAuthenticated }) => {
         return <Redirect to='/adminDashboard' />;
     }
 
-
-
     // const newUser = {
     //     name,
     //     email,
