@@ -17,10 +17,7 @@ body {
   font-family: 'Questrial', sans-serif;
   font-size: 1rem;
   line-height: 1.6;
-
-  background-image: url('../src/img/dajjma-background.png');
-  background-color: #9efe6a;
-
+  background: url("../src/img/dajjma-background.png") no-repeat center center fixed;
   color: #333;
 }
 
@@ -55,7 +52,7 @@ img {
   margin: auto;
   overflow: hidden;
   padding: 0 2rem;
-  margin-top: 6rem;
+  margin-top: 4rem;
   margin-bottom: 3rem;
 }
 
@@ -610,14 +607,14 @@ button {
   }
 
   /* Profiles Page */
-  .profile {
+  /* .profile {
     grid-template-columns: 1fr;
     text-align: center;
   }
 
   .profile ul {
     display: none;
-  }
+  } */
 
   /* Profile Page */
 
@@ -697,3 +694,14 @@ button {
 .signIn {
   color: #0c038f;
 }
+
+.game {
+  background: url('../src/img/2d-tic-tac-toe.png') no-repeat;
+  width: 1400px;
+  height: 700px;
+  padding-left: 250px;
+  padding-top: 50px;
+}
+
+
+
