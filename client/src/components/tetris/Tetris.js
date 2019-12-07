@@ -101,7 +101,7 @@ const Tetris = () => {
     };
 
     return (
-        <StyledTetrisWrapper
+        <StyledTetrisWrapper className="tetris"
             role="button"
             tabIndex="0"
             onKeyDown={e => move(e)}
