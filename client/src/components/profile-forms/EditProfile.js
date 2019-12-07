@@ -1,20 +1,17 @@
-import React, { useEffect, useState, Fragment } from 'react';
-import { Link, withRouter, Redirect } from 'react-router-dom';
+import React, { Fragment, useState, useEffect } from 'react';
+import { Link, withRouter } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import {
-  createAdminProfile,
-  getCurrentAdminProfile
-} from '../../actions/adminProfile';
+import { createProfile, getCurrentProfile } from '../../actions/profile';
 
-const AdminProfile = ({
-  createAdminProfile,
-  getCurrentAdminProfile,
+const EditProfile = ({
   profile: { profile, loading },
+  createProfile,
+  getCurrentProfile,
   history
 }) => {
   const [formData, setFormData] = useState({
-    name: '',
+    company: '',
     website: '',
     location: '',
     status: '',
@@ -27,9 +24,31 @@ const AdminProfile = ({
     youtube: '',
     instagram: ''
   });
+
   const [displaySocialInputs, toggleSocialInputs] = useState(false);
+
+  useEffect(() => {
+    getCurrentProfile();
+
+    setFormData({
+      company: loading || !profile.company ? '' : profile.company,
+      website: loading || !profile.website ? '' : profile.website,
+      location: loading || !profile.location ? '' : profile.location,
+      status: loading || !profile.status ? '' : profile.status,
+      skills: loading || !profile.skills ? '' : profile.skills.join(','),
+      githubusername:
+        loading || !profile.githubusername ? '' : profile.githubusername,
+      bio: loading || !profile.bio ? '' : profile.bio,
+      twitter: loading || !profile.social ? '' : profile.social.twitter,
+      facebook: loading || !profile.social ? '' : profile.social.facebook,
+      linkedin: loading || !profile.social ? '' : profile.social.linkedin,
+      youtube: loading || !profile.social ? '' : profile.social.youtube,
+      instagram: loading || !profile.social ? '' : profile.social.instagram
+    });
+  }, [loading, getCurrentProfile]);
+
   const {
-    name,
+    company,
     website,
     location,
     status,
@@ -42,46 +61,40 @@ const AdminProfile = ({
     youtube,
     instagram
   } = formData;
+
   const onChange = e =>
     setFormData({ ...formData, [e.target.name]: e.target.value });
+
   const onSubmit = e => {
     e.preventDefault();
-    AdminProfile(formData, history);
+    createProfile(formData, history, true);
   };
-  useEffect(() => {
-    getCurrentAdminProfile();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [getCurrentAdminProfile]);
-  return loading && profile === null ? (
-    <Redirect to='/adminDashboard' />
-  ) : (
+
+  return (
     <Fragment>
-      <h1 className='large text-primary'>Create Your Profile</h1>
+      <h1 className='large text-primary'>Edit Your Profile</h1>
       <p className='lead'>
-        <i className='fas fa-user' /> Let's get some information to make your
-        profile stand out
+        <i className='fas fa-user' /> Add some changes to your profile
       </p>
       <small>* = required field</small>
       <form className='form' onSubmit={e => onSubmit(e)}>
         <div className='form-group'>
           <select name='status' value={status} onChange={e => onChange(e)}>
-            <option value='0'>* Select Professional Status</option>
-            <option value='Psychologist'>Psychologist</option>
-            <option value='Psychiatrist'>Psychiatrist</option>
-            <option value='Psychoanalyst'>Psychoanalyst</option>
-            <option value='Psychiatric Nurse'>Psychiatric Nurse</option>
-            <option value='Mental Health Councelor'>
-              Mental Health Councelor
-            </option>
-            <option value='Addiction Councelor'>Addiction Councelor</option>
+            <option>* Select Professional Status</option>
+            <option value='Developer'>Developer</option>
+            <option value='Junior Developer'>Junior Developer</option>
+            <option value='Senior Developer'>Senior Developer</option>
+            <option value='Manager'>Manager</option>
+            <option value='Student or Learning'>Student or Learning</option>
+            <option value='Instructor'>Instructor or Teacher</option>
             <option value='Intern'>Intern</option>
             <option value='Other'>Other</option>
           </select>
           <small className='form-text'>
-            Please select your professional status
+            Give us an idea of where you are at in your career
           </small>
         </div>
-        {/* <div className='form-group'>
+        <div className='form-group'>
           <input
             type='text'
             placeholder='Company'
@@ -90,9 +103,9 @@ const AdminProfile = ({
             onChange={e => onChange(e)}
           />
           <small className='form-text'>
-            Brief Description of Your Patients Condition
+            Could be your own company or one you work for
           </small>
-        </div> */}
+        </div>
         <div className='form-group'>
           <input
             type='text'
@@ -162,6 +175,7 @@ const AdminProfile = ({
           </button>
           <span>Optional</span>
         </div>
+
         {displaySocialInputs && (
           <Fragment>
             <div className='form-group social-input'>
@@ -222,7 +236,7 @@ const AdminProfile = ({
         )}
 
         <input type='submit' className='btn btn-primary my-1' />
-        <Link className='btn btn-light my-1' to='/dashboard'>
+        <Link className='btn btn-light my-1' to='/adminDashboard'>
           Go Back
         </Link>
       </form>
@@ -230,15 +244,16 @@ const AdminProfile = ({
   );
 };
 
-createAdminProfile.propTypes = {
-  createAdminProfile: PropTypes.func.isRequired,
-  getCurrentAdminProfile: PropTypes.func.isRequired,
+EditProfile.propTypes = {
+  createProfile: PropTypes.func.isRequired,
+  getCurrentProfile: PropTypes.func.isRequired,
   profile: PropTypes.object.isRequired
 };
+
 const mapStateToProps = state => ({
   profile: state.profile
 });
-export default connect(mapStateToProps, {
-  createAdminProfile,
-  getCurrentAdminProfile
-})(withRouter(createAdminProfile));
+
+export default connect(mapStateToProps, { createProfile, getCurrentProfile })(
+  withRouter(EditProfile)
+);
