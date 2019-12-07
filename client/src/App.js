@@ -11,7 +11,8 @@ import Dashboard from './components/dashboard/Dashboard';
 import adminDashboard from './components/dashboard/adminDashboard';
 import EditAdminProfile from '../src/components/profile-forms/editAdminProfile';
 import PrivateRoute from './components/routing/PrivateRoute';
-import adminSpinner from './components/administrators/adminSpinner'
+import adminSpinner from './components/administrators/adminSpinner';
+import Twitch from './components/Twitch'
 // Games Produced by DAJJMA!
 import Game1 from './components/TicTacToe/Game1';
 import Tetris from './components/tetris/Tetris';
@@ -60,7 +61,9 @@ const App = () => {
               <PrivateRoute exact path='/games/1010hex' component={Tentenhex} />
               <PrivateRoute exact path='/games/mainpower' component={Mainpower} />
             </Switch>
+            <Twitch/>
           </section>
+
         </Fragment>
       </Router>
     </Provider>
