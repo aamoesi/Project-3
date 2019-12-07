@@ -711,6 +711,11 @@ button {
 #twitch-embed{
   position: relative;
   float: right;
-  border: none;
+  padding-top: 30px;
+  padding-bottom: 56.25;
+  overflow: hidden;
+  top: 300;
+  left: 300;
+
 
 }
