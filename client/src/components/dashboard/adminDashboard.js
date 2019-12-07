@@ -3,93 +3,131 @@ import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import Spinner from '../layout/Spinner';
-// import { getCurrentAdminProfile } from '../../actions/adminProfile';
-import { getCurrentProfile } from '../../actions/profile';
-import { privateDecrypt } from 'crypto';
+import AdminDashboardActions from './adminDashboardActions';
+import { getCurrentAdminProfile } from '../../actions/adminProfile';
+import PrivateRoute from '../routing/PrivateRoute';
 
 const Dashboard = ({
-  getCurrentProfile,
-  auth: { user },
-  profile: { profile, loading }
+    getCurrentAdminProfile,
+    deleteAccount,
+    auth: { user },
+    profile: { profile, loading }
 }) => {
-  useEffect(() => {
-    getCurrentProfile();
-  }, []);
+    useEffect(() => {
+        getCurrentAdminProfile();
+    }, [getCurrentAdminProfile]);
 
-  return loading && profile === null ? (
-    <Spinner />
-  ) : (
-    <Fragment>
-      <h1 className='large text-primary'>Admin Dashboard</h1>
-      <p className='lead'>
-        <i className='fas fa-user'></i>Welcome {user && user.name}
-      </p>
-      {profile !== null ? (
-        <Fragment>has</Fragment>
-      ) : (
-        <Fragment>
-          <p className='boldText'>
-            You have not yet setup a profile, please add some info
-          </p>
-          <Link to='/create-profile' className='btn btn-primaryAdmn my-1'>
-            Create Profile
-          </Link>
-        </Fragment>
-      )}
-    </Fragment>
-  );
+    return loading && profile === null ? (
+        <Spinner />
+    ) : (
+            <Fragment>
+                <h1 className='large text-primary'>Dashboard</h1>
+                <p className='lead'>
+                    <i className='fas fa-user' /> Welcome {user && user.name}
+                </p>
+                {profile !== null ? (
+                    <Fragment>
+                        <AdminDashboardActions />
+                        {/* <Experience experience={profile.experience} /> */}
+                        {/* <Education education={profile.education} /> */}
+
+                        <div className='my-2'>
+                            <button className='btn btn-danger' onClick={() => deleteAccount()}>
+                                <i className='fas fa-user-minus' /> Delete My Account
+              </button>
+                        </div>
+                    </Fragment>
+                ) : (
+                        <Fragment>
+                            <p className="whiteText">You have not yet setup a profile, please add some info</p>
+                            <Link to='/create-profile' className='btn btn-primaryAdmn my-1'>
+                                Create Profile
+            </Link>
+                        </Fragment>
+                    )}
+            </Fragment>
+        );
 };
 
 Dashboard.propTypes = {
-  getCurrentProfile: PropTypes.func.isRequired,
-  auth: PropTypes.object.isRequired,
-  profile: PropTypes.object.isRequired
+    getCurrentAdminProfile: PropTypes.func.isRequired,
+    deleteAccount: PropTypes.func.isRequired,
+    auth: PropTypes.object.isRequired,
+    profile: PropTypes.object.isRequired
 };
 
 const mapStateToProps = state => ({
-  auth: state.auth,
-  profile: state.profile
+    auth: state.auth,
+    profile: state.profile
 });
 
-export default connect(mapStateToProps, { getCurrentProfile })(Dashboard);
+export default connect(
+    mapStateToProps,
+    { getCurrentAdminProfile }
+)(Dashboard);
 
-// const Dashboard = ({ getCurrentAdminProfile, auth, profile }) => {
-//   useEffect(() => {
-//     getCurrentAdminProfile();
-//   }, [getCurrentAdminProfile]);
-// };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // const adminDashboard = props => {
-//   return (
-// <Spinner />
 
-// <Fragment>
-//   <h1 className='large text-primary'>Administrative Dashboard</h1>
 
-{
-  /* <p className='lead'>
-            <i className='fas fa-user' /> Welcome {userAdmin && userAdmin.name}
-          </p> */
-}
+//     return (
+//         // <Spinner />
 
-//       <Fragment>
-//         <AdminDashboardActions />
-//       </Fragment>
-//     </Fragment>
-//   );
-// };
+//         <Fragment>
+
+//             <AdminDashboardActions />
+
+//         </Fragment>
+//     )
+
 // }
 
 // adminDashboard.propTypes = {
 
-//     getCurrentAdminProfile: PropTypes.func.isRequired,
-//     auth: PropTypes.object.isRequired,
-//     profile: PropTypes.object.isRequired
 // }
 
-// const mapStateToProps = state => ({
-//     auth: state.auth,
-//     profile: state.profile,
-// })
 
-// export default connect(mapStateToProps, { getCurrentAdminProfile })(adminDashboard);
+// export default adminDashboard;
