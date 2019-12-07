@@ -13,40 +13,32 @@ const Dashboard = ({
     auth: { user },
     profile: { profile, loading }
 }) => {
-    useEffect(() => {
-        getCurrentAdminProfile();
-    }, [getCurrentAdminProfile]);
+  useEffect(() => {
+    getCurrentProfile();
+  }, []);
 
-    return loading && profile === null ? (
-        <Spinner />
-    ) : (
-            <Fragment>
-                <h1 className='large text-primary'>Dashboard</h1>
-                <p className='lead'>
-                    <i className='fas fa-user' /> Welcome {user && user.name}
-                </p>
-                {profile !== null ? (
-                    <Fragment>
-                        <AdminDashboardActions />
-                        {/* <Experience experience={profile.experience} /> */}
-                        {/* <Education education={profile.education} /> */}
-
-                        <div className='my-2'>
-                            <button className='btn btn-danger' onClick={() => deleteAccount()}>
-                                <i className='fas fa-user-minus' /> Delete My Account
-              </button>
-                        </div>
-                    </Fragment>
-                ) : (
-                        <Fragment>
-                            <p className="whiteText">You have not yet setup a profile, please add some info</p>
-                            <Link to='/create-profile' className='btn btn-primaryAdmn my-1'>
-                                Create Profile
-            </Link>
-                        </Fragment>
-                    )}
-            </Fragment>
-        );
+  return loading && profile === null ? (
+    <Spinner />
+  ) : (
+    <Fragment>
+      <h1 className='large text-primary'>ADMIN DASHBOARD</h1>
+      <p className='lead'>
+        <i className='fas fa-user'></i> Welcome {user && user.name}
+      </p>
+      {profile !== null ? (
+        <Fragment>has</Fragment>
+      ) : (
+        <Fragment>
+          <p className='boldText'>
+            You have not yet setup a profile, please add some info
+          </p>
+          <Link to='/create-profile' className='btn btn-primaryAdmn my-1'>
+            Create Profile
+          </Link>
+        </Fragment>
+      )}
+    </Fragment>
+  );
 };
 
 Dashboard.propTypes = {
