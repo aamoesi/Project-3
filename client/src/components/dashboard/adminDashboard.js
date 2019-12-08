@@ -20,25 +20,27 @@ const Dashboard = ({
   return loading && profile === null ? (
     <Spinner />
   ) : (
-      <Fragment>
-        <h1 className='large text-primary'>ADMIN DASHBOARD</h1>
-        <p className='lead'>
-          <i className='fas fa-user'></i> Welcome {user && user.name}
-        </p>
-        {profile !== null ? (
-          <Fragment>has</Fragment>
-        ) : (
-            <Fragment>
-              <p className='boldText'>
-                You have not yet setup a profile, please add some info
+    <Fragment>
+      <h1 className='large text-primary'>ADMIN DASHBOARD</h1>
+      <p className='lead'>
+        <i className='fas fa-user'></i> Welcome {user && user.name}
+      </p>
+      {profile !== null ? (
+        <Fragment>
+          <AdminDashboardActions />
+        </Fragment>
+      ) : (
+        <Fragment>
+          <p className='boldText'>
+            You have not yet setup a profile, please add some info
           </p>
-              <Link to='/create-profile' className='btn btn-primaryAdmn my-1'>
-                Create Profile
+          <Link to='/create-profile' className='btn btn-primaryAdmn my-1'>
+            Create Profile
           </Link>
-            </Fragment>
-          )}
-      </Fragment>
-    );
+        </Fragment>
+      )}
+    </Fragment>
+  );
 };
 
 Dashboard.propTypes = {
@@ -53,57 +55,9 @@ const mapStateToProps = state => ({
   profile: state.profile
 });
 
-export default connect(
-  mapStateToProps,
-  { getCurrentAdminProfile }
-)(Dashboard);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+export default connect(mapStateToProps, { getCurrentAdminProfile })(Dashboard);
 
 // const adminDashboard = props => {
-
 
 //     return (
 //         // <Spinner />
@@ -120,6 +74,5 @@ export default connect(
 // adminDashboard.propTypes = {
 
 // }
-
 
 // export default adminDashboard;
