@@ -3,16 +3,16 @@ import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import Spinner from '../layout/Spinner';
-import { getCurrentProfile } from '../../actions/profile';
+import { getCurrentAdminProfile } from '../../actions/profile';
 import Gamefeed from '../Gamefeed'
 
 const Dashboard = ({
-  getCurrentProfile,
+  getCurrentAdminProfile,
   auth: { user },
   profile: { profile, loading }
 }) => {
   useEffect(() => {
-    getCurrentProfile();
+    getCurrentAdminProfile();
   }, []);
   return loading && profile === null ? (
     <Spinner />
@@ -62,7 +62,7 @@ const Dashboard = ({
 };
 
 Dashboard.propTypes = {
-  getCurrentProfile: PropTypes.func.isRequired,
+  getCurrentAdminProfile: PropTypes.func.isRequired,
   auth: PropTypes.object.isRequired,
   profile: PropTypes.object.isRequired
 };
@@ -72,4 +72,4 @@ const mapStateToProps = state => ({
   profile: state.profile
 });
 
-export default connect(mapStateToProps, { getCurrentProfile })(Dashboard);
+export default connect(mapStateToProps, { getCurrentAdminProfile })(Dashboard);
