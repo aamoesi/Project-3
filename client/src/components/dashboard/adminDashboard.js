@@ -14,7 +14,7 @@ const Dashboard = ({
     profile: { profile, loading }
 }) => {
   useEffect(() => {
-    getCurrentProfile();
+    getCurrentAdminProfile();
   }, []);
 
   return loading && profile === null ? (
