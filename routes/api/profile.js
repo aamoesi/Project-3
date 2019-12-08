@@ -42,7 +42,7 @@ router.post(
       check('status', 'Status is required')
         .not()
         .isEmpty(),
-      check('skills', 'Skills is required')
+      check('symptoms', 'symptoms is required')
         .not()
         .isEmpty()
     ]
@@ -56,13 +56,13 @@ router.post(
     }
 
     const {
-      company,
-      website,
-      location,
-      bio,
+      name,
+      duration,
+      severity,
+      goals,
       status,
       githubusername,
-      skills,
+      symptoms,
       youtube,
       facebook,
       twitter,
@@ -73,14 +73,14 @@ router.post(
     //Build profile object
     const profileFields = {};
     profileFields.user = req.user.id;
-    if (company) profileFields.company = company;
-    if (website) profileFields.website = website;
-    if (location) profileFields.location = location;
-    if (bio) profileFields.bio = bio;
+    if (name) profileFields.name = name;
+    if (duration) profileFields.duration = duration;
+    if (severity) profileFields.severity = severity;
+    if (goals) profileFields.goals = goals;
     if (status) profileFields.status = status;
     if (githubusername) profileFields.githubusername = githubusername;
-    if (skills) {
-      profileFields.skills = skills.split(',').map(skill => skill.trim());
+    if (symptoms) {
+      profileFields.symptoms = symptoms.split(',').map(skill => skill.trim());
     }
 
     //Build social object
@@ -169,7 +169,7 @@ router.put(
       check('title', 'Title is required')
         .not()
         .isEmpty(),
-      check('company', 'Company is required')
+      check('name', 'name is required')
         .not()
         .isEmpty(),
       check('from', 'From date is required')
@@ -183,20 +183,12 @@ router.put(
       return res.status(400).json({ errors: errors.array() });
     }
 
-    const {
-      title,
-      company,
-      location,
-      from,
-      to,
-      current,
-      description
-    } = req.body;
+    const { title, name, severity, from, to, current, description } = req.body;
 
     const newExp = {
       title,
-      company,
-      location,
+      name,
+      severity,
       from,
       to,
       current,

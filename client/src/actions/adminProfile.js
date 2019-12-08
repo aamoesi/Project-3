@@ -14,7 +14,7 @@ import {
 //Get current users profile
 export const getCurrentAdminProfile = () => async dispatch => {
     try {
-        const res = await axios.get('/api/adminProfile/admin');
+        const res = await axios.get('/api/profile/me');
 
         dispatch({
             type: GET_PROFILE,
