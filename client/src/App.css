@@ -61,7 +61,7 @@ img {
   margin: auto;
   overflow: hidden;
   padding: 0 2rem;
-  margin-top: 6rem;
+  /* margin-top: 6rem; */
   margin-bottom: 3rem;
 }
 
@@ -411,7 +411,7 @@ button {
 .landing {
   position: relative;
   background: url('./img/DAJJMA logo dark 01.png') no-repeat center;
-  height: 66vh;
+  height: 51vh;
 }
 
 .landing-inner {
