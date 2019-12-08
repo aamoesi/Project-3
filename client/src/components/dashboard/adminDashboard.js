@@ -8,54 +8,54 @@ import { getCurrentAdminProfile } from '../../actions/adminProfile';
 import PrivateRoute from '../routing/PrivateRoute';
 
 const Dashboard = ({
-    getCurrentAdminProfile,
-    deleteAccount,
-    auth: { user },
-    profile: { profile, loading }
+  getCurrentAdminProfile,
+  deleteAccount,
+  auth: { user },
+  profile: { profile, loading }
 }) => {
   useEffect(() => {
-    getCurrentProfile();
+    getCurrentAdminProfile();
   }, []);
 
   return loading && profile === null ? (
     <Spinner />
   ) : (
-    <Fragment>
-      <h1 className='large text-primary'>ADMIN DASHBOARD</h1>
-      <p className='lead'>
-        <i className='fas fa-user'></i> Welcome {user && user.name}
-      </p>
-      {profile !== null ? (
-        <Fragment>has</Fragment>
-      ) : (
-        <Fragment>
-          <p className='boldText'>
-            You have not yet setup a profile, please add some info
+      <Fragment>
+        <h1 className='large text-primary'>ADMIN DASHBOARD</h1>
+        <p className='lead'>
+          <i className='fas fa-user'></i> Welcome {user && user.name}
+        </p>
+        {profile !== null ? (
+          <Fragment>has</Fragment>
+        ) : (
+            <Fragment>
+              <p className='boldText'>
+                You have not yet setup a profile, please add some info
           </p>
-          <Link to='/create-profile' className='btn btn-primaryAdmn my-1'>
-            Create Profile
+              <Link to='/create-profile' className='btn btn-primaryAdmn my-1'>
+                Create Profile
           </Link>
-        </Fragment>
-      )}
-    </Fragment>
-  );
+            </Fragment>
+          )}
+      </Fragment>
+    );
 };
 
 Dashboard.propTypes = {
-    getCurrentAdminProfile: PropTypes.func.isRequired,
-    deleteAccount: PropTypes.func.isRequired,
-    auth: PropTypes.object.isRequired,
-    profile: PropTypes.object.isRequired
+  getCurrentAdminProfile: PropTypes.func.isRequired,
+  deleteAccount: PropTypes.func.isRequired,
+  auth: PropTypes.object.isRequired,
+  profile: PropTypes.object.isRequired
 };
 
 const mapStateToProps = state => ({
-    auth: state.auth,
-    profile: state.profile
+  auth: state.auth,
+  profile: state.profile
 });
 
 export default connect(
-    mapStateToProps,
-    { getCurrentAdminProfile }
+  mapStateToProps,
+  { getCurrentAdminProfile }
 )(Dashboard);
 
 

@@ -42,11 +42,12 @@ export const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
   );
   return (
     <nav className='navbar bg-dark'>
-      <h1>
+      {/* <h1>
         <Link to='/'>
           <i className='' /> DAJJMA!
         </Link>
-      </h1>
+      </h1> */}
+      <h1>DAJJMA!</h1>
       {!loading && (
         <Fragment>{isAuthenticated ? authLinks : guestLinks}</Fragment>
       )}
