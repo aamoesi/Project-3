@@ -1,13 +1,13 @@
-import React, { useEffect, useState, Fragment } from 'react';
-import { Link, withRouter, Redirect } from 'react-router-dom';
+import React, { Fragment, useState, useEffect } from 'react';
+import { Link, withRouter } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { createProfile, getCurrentProfile } from '../../actions/profile';
 
-const Createprofile = ({
+const EditProfile = ({
+  profile: { profile, loading },
   createProfile,
   getCurrentProfile,
-  profile: { profile, loading },
   history
 }) => {
   const [formData, setFormData] = useState({
@@ -18,41 +18,56 @@ const Createprofile = ({
     skills: '',
     bio: ''
   });
-  //   const [displaySocialInputs, toggleSocialInputs] = useState(false);
-  const { company, website, location, status, skills, bio } = formData;
-  const onChange = e =>
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  const onSubmit = e => {
-    e.preventDefault();
-    createProfile(formData, history);
-  };
+
+  const [displaySocialInputs, toggleSocialInputs] = useState(false);
+
   useEffect(() => {
     getCurrentProfile();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [getCurrentProfile]);
-  return loading && profile === null ? (
-    <Redirect to='/adminDashboard' />
-  ) : (
+
+    setFormData({
+      company: loading || !profile.company ? '' : profile.company,
+      website: loading || !profile.website ? '' : profile.website,
+      location: loading || !profile.location ? '' : profile.location,
+      status: loading || !profile.status ? '' : profile.status,
+      skills: loading || !profile.skills ? '' : profile.skills.join(','),
+      bio: loading || !profile.bio ? '' : profile.bio
+    });
+  }, [loading, getCurrentProfile]);
+
+  const { company, website, location, status, skills, bio } = formData;
+
+  const onChange = e =>
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+
+  const onSubmit = e => {
+    e.preventDefault();
+    createProfile(formData, history, true);
+  };
+
+  return (
     <Fragment>
-      <h1 className='large text-primary'>Create Your Patient's Profile</h1>
+      <h1 className='large text-primary'>Edit Your Profile</h1>
       <p className='lead'>
-        <i className='fas fa-user' /> Let's start by getting some information
-        about your patient.
+        <i className='fas fa-user' /> Add some changes to your profile
       </p>
       <small>* = required field</small>
       <form className='form' onSubmit={e => onSubmit(e)}>
         <div className='form-group'>
           <select name='status' value={status} onChange={e => onChange(e)}>
-            <option value='0'>* Select Professional Status</option>
-            <option value='Psychologist'>Psychologist</option>
-            <option value='Psychiatrist'>Psychiatrist</option>
-            <option value='Psychoanalyst'>Psychoanalyst</option>
-            <option value='Psychiatric Nurse'>Psychiatric Nurse</option>
-            <option value='Mental Health Councelor'>
-              Mental Health Councelor
+            <option>* Select Patient Status</option>
+            <option value='Dementia'>Dementia</option>
+            <option value='Alzheimers'>Alzheimers</option>
+            <option value='Dyslexia'>Dyslexia</option>
+            <option value='Chronic Traumatic Encephalopathy'>
+              Chronic Traumatic Encephalopathy
             </option>
-            <option value='Addiction Councelor'>Addiction Councelor</option>
-            <option value='Intern'>Intern</option>
+            <option value='ADHD'>ADHD</option>
+            <option value='Post Traumatic Stress Disorder'>
+              Post Traumatic Stress Disorder
+            </option>
+            <option value='Mild Cognitive Impairment'>
+              Mild Cognitive Impairment
+            </option>
             <option value='Other'>Other</option>
           </select>
           <small className='form-text'>
@@ -127,14 +142,16 @@ const Createprofile = ({
   );
 };
 
-Createprofile.propTypes = {
+EditProfile.propTypes = {
   createProfile: PropTypes.func.isRequired,
   getCurrentProfile: PropTypes.func.isRequired,
   profile: PropTypes.object.isRequired
 };
+
 const mapStateToProps = state => ({
   profile: state.profile
 });
+
 export default connect(mapStateToProps, { createProfile, getCurrentProfile })(
-  withRouter(Createprofile)
+  withRouter(EditProfile)
 );

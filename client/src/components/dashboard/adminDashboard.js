@@ -32,10 +32,11 @@ const Dashboard = ({
       ) : (
         <Fragment>
           <p className='boldText'>
-            You have not yet setup a profile, please add some info
+            You do not have any patient profiles set up yet. Please add patients
+            below.
           </p>
           <Link to='/create-profile' className='btn btn-primaryAdmn my-1'>
-            Create Profile
+            Create Patient Profile
           </Link>
         </Fragment>
       )}
