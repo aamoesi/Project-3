@@ -85,7 +85,7 @@ const AdminRegister = ({ setAlert, register, isAuthenticated }) => {
                         value={password2} onChange={e => onChange(e)}
                     />
                 </div>
-                <input type="submit" className="btn btn-primary" value="Register" />
+                <input type="submit" className="btn btn-primaryAdmn" value="Register" />
             </form>
             <p className="my-1">
                 Already have an account? <Link to="/AdminLogin" className='signIn'>Sign In</Link>

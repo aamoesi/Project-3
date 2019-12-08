@@ -20,6 +20,7 @@ export const getCurrentAdminProfile = () => async dispatch => {
             type: GET_PROFILE,
             payload: res.data
         });
+        console.log(res.data)
     } catch (err) {
         dispatch({
             type: PROFILE_ERROR,
