@@ -21,9 +21,9 @@ const Dashboard = ({
     <Spinner />
   ) : (
     <Fragment>
-      <h1 className='large text-primary'>ADMIN DASHBOARD</h1>
+      <h1 className='large text-primary'>PATIENT DASHBOARD</h1>
       <p className='lead'>
-        <i className='fas fa-user'></i> Welcome {user && user.name}
+        <i className='fas fa-user'></i> Patient Portal for: {user && user.name}
       </p>
       {profile !== null ? (
         <Fragment>
