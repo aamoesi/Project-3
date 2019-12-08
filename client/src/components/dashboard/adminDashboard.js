@@ -1,6 +1,9 @@
-import React, { useEffect } from 'react';
+import React, { Fragment, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+// import Spinner from '../layout/Spinner';
+import AdminDashboardActions from './adminDashboardActions';
 import { getCurrentAdminProfile } from '../../actions/adminProfile';
 import PrivateRoute from '../routing/PrivateRoute';
 
@@ -13,26 +16,13 @@ const adminDashboard = props => {
 
 
     return (
-        <h1>
+        // <Spinner />
 
-            This will be our ADMIN Dashboard.
-            <br />
+        <Fragment>
 
-            Goals for this dashoard:
-            <br />
-            1. Display users progress with games.
-            <br />
-            2. Have area for Admin users to keep notes and track progress.
-            <br />
-            3. Administrators comments.
-            <br />
-            4. Inoformation about patients.
-            <br />
-            5. Information about Administrators.
+            <AdminDashboardActions />
 
-        </h1>
-
-
+        </Fragment>
     )
 }
 // }

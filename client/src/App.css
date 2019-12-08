@@ -217,6 +217,17 @@ img {
   margin-left: 550px;
 }
 
+.btn-primaryAdmn
+ {
+  /* background: var(--primary-color); */
+  background: #f7f5fa;
+  color: #0c038f;
+  margin-top: 10px;
+  margin-left: 20px;
+}
+
+
+
 .btn-light,
 .bg-light,
 .badge-light,
