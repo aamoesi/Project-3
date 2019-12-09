@@ -74,7 +74,7 @@ const AddEducation = ({ addEducation, history }) => {
             onChange={e => onChange(e)}
           />
         </div>
-        <div className='form-group'>
+        <div className='whiteText'>
           <h4>From Date</h4>
           <input
             type='date'
@@ -98,7 +98,7 @@ const AddEducation = ({ addEducation, history }) => {
             Current School
           </p>
         </div>
-        <div className='form-group'>
+        <div className='whiteText'>
           <h4>To Date</h4>
           <input
             type='date'

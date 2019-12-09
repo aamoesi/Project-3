@@ -34,9 +34,10 @@ const AddExperience = ({ addExperience, history }) => {
 
   return (
     <Fragment>
-      <h1 className='large text-primary'>Patient Visits</h1>
+      <h1 className='large text-primary'>Patient Experience</h1>
       <p className='lead'>
-        <i className='fas fa-code-branch' /> Keep track of your patient visits.
+        <i className='fas fa-code-branch' /> Keep track of your patient's
+        progress through the treatment program.
       </p>
       <small className='whiteText'>* = required field</small>
       <form
@@ -69,7 +70,7 @@ const AddExperience = ({ addExperience, history }) => {
         <div className='form-group'>
           <input
             type='text'
-            placeholder='Location'
+            placeholder='Location of Treatment'
             name='location'
             value={location}
             onChange={e => onChange(e)}
@@ -78,14 +79,14 @@ const AddExperience = ({ addExperience, history }) => {
         <div className='form-group'>
           <input
             type='text'
-            placeholder='Status'
+            placeholder='Patient Status'
             name='status'
             value={status}
             onChange={e => onChange(e)}
           />
         </div>
-        <div className='form-group'>
-          <h4>From Date</h4>
+        <div className='form-group whiteText'>
+          <p>Treatment Start Date</p>
           <input
             type='date'
             name='from'
@@ -94,7 +95,7 @@ const AddExperience = ({ addExperience, history }) => {
           />
         </div>
         <div className='form-group'>
-          <p>
+          <p className='whiteText'>
             <input
               type='checkbox'
               name='current'
@@ -105,11 +106,11 @@ const AddExperience = ({ addExperience, history }) => {
                 toggleDisabled(!toDateDisabled);
               }}
             />{' '}
-            Current Job
+            Currently Enrolled in Treatment
           </p>
         </div>
-        <div className='form-group'>
-          <h4>Date of Visit</h4>
+        <div className='form-group whiteText'>
+          <p>Treatment End Date</p>
           <input
             type='date'
             name='to'
@@ -123,7 +124,7 @@ const AddExperience = ({ addExperience, history }) => {
             name='description'
             cols='30'
             rows='5'
-            placeholder='Job Description'
+            placeholder='Please briefly describe treatement program.'
             value={description}
             onChange={e => onChange(e)}
           />
