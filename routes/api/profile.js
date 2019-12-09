@@ -169,7 +169,7 @@ router.put(
       check('title', 'Title is required')
         .not()
         .isEmpty(),
-      check('name', 'name is required')
+      check('company', 'Company is required')
         .not()
         .isEmpty(),
       check('from', 'From date is required')
@@ -183,12 +183,20 @@ router.put(
       return res.status(400).json({ errors: errors.array() });
     }
 
-    const { title, name, severity, from, to, current, description } = req.body;
+    const {
+      title,
+      company,
+      location,
+      from,
+      to,
+      current,
+      description
+    } = req.body;
 
     const newExp = {
       title,
-      name,
-      severity,
+      company,
+      location,
       from,
       to,
       current,

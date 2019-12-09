@@ -5,7 +5,8 @@ import { connect } from 'react-redux';
 import Spinner from '../layout/Spinner';
 import AdminDashboardActions from './adminDashboardActions';
 import { getCurrentAdminProfile } from '../../actions/adminProfile';
-import PrivateRoute from '../routing/PrivateRoute';
+import Experience from './Experience';
+import Education from './Education';
 
 const Dashboard = ({
   getCurrentAdminProfile,
@@ -23,11 +24,14 @@ const Dashboard = ({
     <Fragment>
       <h1 className='large text-primary'>PATIENT DASHBOARD</h1>
       <p className='lead'>
-        <i className='fas fa-user'></i> Patient Portal for: {user && user.name}
+        <i className='fas fa-user whiteText2'></i> Patient Portal for:{' '}
+        {user && user.name}
       </p>
       {profile !== null ? (
         <Fragment>
           <AdminDashboardActions />
+          <Experience experience={profile.experience} />
+          <Education education={profile.education} />
         </Fragment>
       ) : (
         <Fragment>

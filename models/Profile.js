@@ -31,11 +31,11 @@ const ProfileSchema = new mongoose.Schema({
         type: String,
         required: true
       },
-      name: {
+      company: {
         type: String,
         required: true
       },
-      severity: {
+      location: {
         type: String
       },
       from: {
