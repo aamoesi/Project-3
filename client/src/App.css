@@ -230,6 +230,16 @@ img {
   color: white;
 }
 
+.whiteText1 {
+  color: white;
+  font-size: 23px;
+}
+
+.whiteText2 {
+  color: white;
+  font-size: 35px;
+}
+
 .btn-light,
 .bg-light,
 .badge-light,

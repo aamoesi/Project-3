@@ -14,6 +14,8 @@ import PrivateRoute from './components/routing/PrivateRoute';
 import adminSpinner from './components/administrators/adminSpinner';
 import Twitch from './components/Twitch'
 import CreateProfile from './components/profile-forms/CreateProfile';
+import AddExperience from './components/profile-forms/AddExperience';
+import AddProgress from './components/profile-forms/AddProgress';
 // Games Produced by DAJJMA!
 import Game1 from './components/TicTacToe/Game1';
 import Tetris from './components/tetris/Tetris';
@@ -60,6 +62,16 @@ const App = () => {
                 exact
                 path='/edit-profile'
                 component={editPatientProfile}
+              />
+              <PrivateRoute
+                exact
+                path='/add-experience'
+                component={AddExperience}
+              />
+              <PrivateRoute
+                exact
+                path='/add-progress'
+                component={AddProgress}
               />
               <PrivateRoute
                 exact
