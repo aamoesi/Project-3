@@ -24,12 +24,11 @@ const AddExperience = ({ addExperience, history }) => {
 
   return (
     <Fragment>
-      <h1 className='large text-primary'>Add An Experience</h1>
+      <h1 className='large text-primary'>Patient Visits</h1>
       <p className='lead'>
-        <i className='fas fa-code-branch' /> Add any developer/programming
-        positions that you have had in the past
+        <i className='fas fa-code-branch' /> Keep track of your patient visits.
       </p>
-      <small>* = required field</small>
+      <small className='whiteText'>* = required field</small>
       <form
         className='form'
         onSubmit={e => {
