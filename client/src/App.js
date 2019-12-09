@@ -69,7 +69,7 @@ const App = () => {
               />
               <PrivateRoute
                 exact
-                path='/add-education'
+                path='/add-progress'
                 component={AddProgress}
               />
               <PrivateRoute

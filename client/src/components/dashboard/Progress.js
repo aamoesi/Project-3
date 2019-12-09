@@ -5,8 +5,8 @@ import moment from 'moment';
 import { connect } from 'react-redux';
 import { deleteProgress } from '../../actions/profile';
 
-const Progress = ({ education, deleteProgress }) => {
-  const educations = education.map(edu => (
+const Progress = ({ progress, deleteProgress }) => {
+  const progresss = progress.map(edu => (
     <tr key={edu._id}>
       <td className='whiteText'>{edu.game}</td>
       <td className='hide-sm whiteText'>{edu.observations}</td>
@@ -37,18 +37,18 @@ const Progress = ({ education, deleteProgress }) => {
           <tr>
             <th>Game Used for Treatment</th>
             <th className='hide-sm'>Observations</th>
-            <th className='hide-sm'>Duration of Use</th>
+            <th className='hide-sm'>Period Game Used</th>
             <th />
           </tr>
         </thead>
-        <tbody>{educations}</tbody>
+        <tbody>{progresss}</tbody>
       </table>
     </Fragment>
   );
 };
 
 Progress.propTypes = {
-  education: PropTypes.array.isRequired,
+  progress: PropTypes.array.isRequired,
   deleteProgress: PropTypes.func.isRequired
 };
 

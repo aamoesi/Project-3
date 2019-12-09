@@ -31,7 +31,7 @@ const Dashboard = ({
         <Fragment>
           <AdminDashboardActions />
           <Experience experience={profile.experience} />
-          <Progress education={profile.education} />
+          <Progress progress={profile.progress} />
         </Fragment>
       ) : (
         <Fragment>

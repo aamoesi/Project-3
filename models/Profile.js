@@ -54,7 +54,7 @@ const ProfileSchema = new mongoose.Schema({
       }
     }
   ],
-  education: [
+  progress: [
     {
       game: {
         type: String

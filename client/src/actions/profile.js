@@ -27,6 +27,25 @@ export const getCurrentProfile = () => async dispatch => {
   }
 };
 
+// Get all profiles
+// export const getProfiles = () => async dispatch => {
+//   dispatch({ type: CLEAR_PROFILE });
+
+//   try {
+//     const res = await axios.get('/api/profile');
+
+//     dispatch({
+//       type: GET_PROFILES,
+//       payload: res.data
+//     });
+//   } catch (err) {
+//     dispatch({
+//       type: PROFILE_ERROR,
+//       payload: { msg: err.response.statusText, status: err.response.status }
+//     });
+//   }
+// };
+
 // Create or update a profile
 export const createProfile = (
   formData,
@@ -107,7 +126,7 @@ export const addProgress = (formData, history) => async dispatch => {
       }
     };
 
-    const res = await axios.put('/api/profile/education', formData, config);
+    const res = await axios.put('/api/profile/progress', formData, config);
 
     dispatch({
       type: UPDATE_PROFILE,
@@ -150,10 +169,10 @@ export const deleteExperience = id => async dispatch => {
   }
 };
 
-// Delete education
+// Delete progress
 export const deleteProgress = id => async dispatch => {
   try {
-    const res = await axios.delete(`/api/profile/education/${id}`);
+    const res = await axios.delete(`/api/profile/progress/${id}`);
 
     dispatch({
       type: UPDATE_PROFILE,

@@ -240,11 +240,11 @@ router.delete('/experience/:exp_id', auth, async (req, res) => {
   }
 });
 
-// @route    PUT api/profile/education
-// @desc     Add profile education
+// @route    PUT api/profile/progress
+// @desc     Add profile progress
 // @access   Private
 router.put(
-  '/education',
+  '/progress',
   [
     auth,
     [
@@ -291,7 +291,7 @@ router.put(
     try {
       const profile = await Profile.findOne({ user: req.user.id });
 
-      profile.education.unshift(newEdu);
+      profile.progress.unshift(newEdu);
 
       await profile.save();
 
@@ -303,19 +303,19 @@ router.put(
   }
 );
 
-// @route    DELETE api/profile/education/:edu_id
-// @desc     Delete education from profile
+// @route    DELETE api/profile/progress/:edu_id
+// @desc     Delete progress from profile
 // @access   Private
-//router.delete('/education/:edu_id', auth, async (req, res) => {
+//router.delete('/progress/:edu_id', auth, async (req, res) => {
 //try {
 //const profile = await Profile.findOne({ user: req.user.id });
 
 // Get remove index
-//const removeIndex = profile.education
+//const removeIndex = profile.progress
 //.map(item => item.id)
 //.indexOf(req.params.edu_id);
 /*
-    profile.education.splice(removeIndex, 1);
+    profile.progress.splice(removeIndex, 1);
 
     await profile.save();
 
@@ -327,11 +327,11 @@ router.put(
 });
 */
 
-router.delete('/education/:edu_id', auth, async (req, res) => {
+router.delete('/progress/:edu_id', auth, async (req, res) => {
   try {
     const foundProfile = await Profile.findOne({ user: req.user.id });
-    const eduIds = foundProfile.education.map(edu => edu._id.toString());
-    // if i dont add .toString() it returns this weird mongoose coreArray and the ids are somehow objects and it still deletes anyway even if you put /education/5
+    const eduIds = foundProfile.progress.map(edu => edu._id.toString());
+    // if i dont add .toString() it returns this weird mongoose coreArray and the ids are somehow objects and it still deletes anyway even if you put /progress/5
     const removeIndex = eduIds.indexOf(req.params.edu_id);
     if (removeIndex === -1) {
       return res.status(500).json({ msg: 'Server error' });
@@ -341,7 +341,7 @@ router.delete('/education/:edu_id', auth, async (req, res) => {
       console.log("typeof eduIds", typeof eduIds);
       console.log("req.params", req.params);
       console.log("removed", eduIds.indexOf(req.params.edu_id));
- */ foundProfile.education.splice(
+ */ foundProfile.progress.splice(
         removeIndex,
         1
       );
