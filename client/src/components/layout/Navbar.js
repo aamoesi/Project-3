@@ -9,8 +9,7 @@ export const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
     <ul>
       <li>
         <Link to='/dashboard'>
-          <i className='fas fa-user' />{' '}
-          <span className='hide-sm'></span>
+          <i className='fas fa-user' /> <span className='hide-sm'></span>
         </Link>
       </li>
       <li>
@@ -24,10 +23,10 @@ export const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
   const guestLinks = (
     <ul>
       <li>
-        <Link to='/adminregister'>ADMIN REGISTER</Link>
+        <Link to='/adminregister'>PATIENT REGISTRATION</Link>
       </li>
       <li>
-        <Link to='/adminlogin'>ADMIN LOGIN</Link>
+        <Link to='/adminlogin'>PATIENT LOGIN</Link>
       </li>
       <li>
         <Link to='/register'>USER REGISTER</Link>
@@ -42,11 +41,12 @@ export const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
   );
   return (
     <nav className='navbar bg-dark'>
-      <h1>
+      {/* <h1>
         <Link to='/'>
           <i className='' /> DAJJMA!
         </Link>
-      </h1>
+      </h1> */}
+      <h1>DAJJMA!</h1>
       {!loading && (
         <Fragment>{isAuthenticated ? authLinks : guestLinks}</Fragment>
       )}
