@@ -8,8 +8,8 @@ import { deleteEducation } from '../../actions/profile';
 const Education = ({ education, deleteEducation }) => {
   const educations = education.map(edu => (
     <tr key={edu._id}>
-      <td className='whiteText'>{edu.school}</td>
-      <td className='hide-sm whiteText'>{edu.degree}</td>
+      <td className='whiteText'>{edu.game}</td>
+      <td className='hide-sm whiteText'>{edu.observations}</td>
       <td className='whiteText'>
         <Moment format='YYYY/MM/DD'>{moment.utc(edu.from)}</Moment> -{' '}
         {edu.to === null ? (
@@ -31,12 +31,12 @@ const Education = ({ education, deleteEducation }) => {
 
   return (
     <Fragment>
-      <p className='my-2 whiteText1'>Education Credentials</p>
+      <p className='my-2 whiteText1'>Patient Progress</p>
       <table className='table'>
         <thead>
           <tr>
-            <th>School</th>
-            <th className='hide-sm'>Degree</th>
+            <th>Game Used for Treatment</th>
+            <th className='hide-sm'>Observations</th>
             <th className='hide-sm'>Years</th>
             <th />
           </tr>

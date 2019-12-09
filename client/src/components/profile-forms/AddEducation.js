@@ -6,9 +6,9 @@ import { addEducation } from '../../actions/profile';
 
 const AddEducation = ({ addEducation, history }) => {
   const [formData, setFormData] = useState({
-    school: '',
-    degree: '',
-    fieldofstudy: '',
+    game: '',
+    observations: '',
+    treatmentgoals: '',
     from: '',
     to: '',
     current: false,
@@ -18,9 +18,9 @@ const AddEducation = ({ addEducation, history }) => {
   const [toDateDisabled, toggleDisabled] = useState(false);
 
   const {
-    school,
-    degree,
-    fieldofstudy,
+    game,
+    observations,
+    treatmentgoals,
     from,
     to,
     current,
@@ -32,12 +32,12 @@ const AddEducation = ({ addEducation, history }) => {
 
   return (
     <Fragment>
-      <h1 className='large text-primary'>Add Your Education</h1>
+      <h1 className='large text-primary'>Monitor Progress.</h1>
       <p className='lead'>
-        <i className='fas fa-code-branch' /> Add any school or bootcamp that you
-        have attended
+        <i className='fas fa-code-branch' /> Track your patient's improvement as
+        they progress through the program.
       </p>
-      <small>* = required field</small>
+      <small className='whiteText'>* = required field</small>
       <form
         className='form'
         onSubmit={e => {
@@ -48,9 +48,9 @@ const AddEducation = ({ addEducation, history }) => {
         <div className='form-group'>
           <input
             type='text'
-            placeholder='* School or Bootcamp'
-            name='school'
-            value={school}
+            placeholder='* Which game is being used for treatment?'
+            name='game'
+            value={game}
             onChange={e => onChange(e)}
             required
           />
@@ -58,9 +58,9 @@ const AddEducation = ({ addEducation, history }) => {
         <div className='form-group'>
           <input
             type='text'
-            placeholder='* Degree or Certificate'
-            name='degree'
-            value={degree}
+            placeholder='* Is the treatment effective?  Please provide bried observations.'
+            name='observations'
+            value={observations}
             onChange={e => onChange(e)}
             required
           />
@@ -68,14 +68,14 @@ const AddEducation = ({ addEducation, history }) => {
         <div className='form-group'>
           <input
             type='text'
-            placeholder='Field of Study'
-            name='fieldofstudy'
-            value={fieldofstudy}
+            placeholder='Treatment Goals'
+            name='treatmentgoals'
+            value={treatmentgoals}
             onChange={e => onChange(e)}
           />
         </div>
         <div className='whiteText'>
-          <h4>From Date</h4>
+          <p>Date Started Using this Game</p>
           <input
             type='date'
             name='from'
@@ -84,7 +84,7 @@ const AddEducation = ({ addEducation, history }) => {
           />
         </div>
         <div className='form-group'>
-          <p>
+          <p className='whiteText'>
             <input
               type='checkbox'
               name='current'
@@ -95,11 +95,11 @@ const AddEducation = ({ addEducation, history }) => {
                 toggleDisabled(!toDateDisabled);
               }}
             />{' '}
-            Current School
+            Patient currently using this game for treatment.
           </p>
         </div>
         <div className='whiteText'>
-          <h4>To Date</h4>
+          <p>Date Patient Stopped Using this Game</p>
           <input
             type='date'
             name='to'
@@ -113,7 +113,7 @@ const AddEducation = ({ addEducation, history }) => {
             name='description'
             cols='30'
             rows='5'
-            placeholder='Program Description'
+            placeholder='Please provide a detailed description of your patients progress.'
             value={description}
             onChange={e => onChange(e)}
           />

@@ -248,18 +248,18 @@ router.put(
   [
     auth,
     [
-      check('school', 'School is required')
-        .not()
-        .isEmpty(),
-      check('degree', 'Degree is required')
-        .not()
-        .isEmpty(),
-      check('fieldofstudy', 'Field of study is required')
-        .not()
-        .isEmpty(),
-      check('from', 'From date is required')
-        .not()
-        .isEmpty()
+      // check('game', 'School is required')
+      //   .not()
+      //   .isEmpty(),
+      // check('observations', 'Degree is required')
+      //   .not()
+      //   .isEmpty(),
+      // check('treatmentgoals', 'Field of study is required')
+      //   .not()
+      //   .isEmpty(),
+      // check('from', 'From date is required')
+      //   .not()
+      //   .isEmpty()
     ]
   ],
   async (req, res) => {
@@ -269,9 +269,9 @@ router.put(
     }
 
     const {
-      school,
-      degree,
-      fieldofstudy,
+      game,
+      observations,
+      treatmentgoals,
       from,
       to,
       current,
@@ -279,9 +279,9 @@ router.put(
     } = req.body;
 
     const newEdu = {
-      school,
-      degree,
-      fieldofstudy,
+      game,
+      observations,
+      treatmentgoals,
       from,
       to,
       current,
