@@ -6,9 +6,10 @@ import { addExperience } from '../../actions/profile';
 
 const AddExperience = ({ addExperience, history }) => {
   const [formData, setFormData] = useState({
-    company: '',
-    title: '',
+    specialist: '',
+    symptoms: '',
     location: '',
+    status: '',
     from: '',
     to: '',
     current: false,
@@ -17,7 +18,16 @@ const AddExperience = ({ addExperience, history }) => {
 
   const [toDateDisabled, toggleDisabled] = useState(false);
 
-  const { company, title, location, from, to, current, description } = formData;
+  const {
+    specialist,
+    symptoms,
+    location,
+    status,
+    from,
+    to,
+    current,
+    description
+  } = formData;
 
   const onChange = e =>
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -39,9 +49,9 @@ const AddExperience = ({ addExperience, history }) => {
         <div className='form-group'>
           <input
             type='text'
-            placeholder='* Job Title'
-            name='title'
-            value={title}
+            placeholder='* Medical Specialist Treating Patient'
+            name='specialist'
+            value={specialist}
             onChange={e => onChange(e)}
             required
           />
@@ -49,9 +59,9 @@ const AddExperience = ({ addExperience, history }) => {
         <div className='form-group'>
           <input
             type='text'
-            placeholder='* Company'
-            name='company'
-            value={company}
+            placeholder='* Symptoms Treated'
+            name='symptoms'
+            value={symptoms}
             onChange={e => onChange(e)}
             required
           />
@@ -62,6 +72,15 @@ const AddExperience = ({ addExperience, history }) => {
             placeholder='Location'
             name='location'
             value={location}
+            onChange={e => onChange(e)}
+          />
+        </div>
+        <div className='form-group'>
+          <input
+            type='text'
+            placeholder='Status'
+            name='status'
+            value={status}
             onChange={e => onChange(e)}
           />
         </div>
@@ -90,7 +109,7 @@ const AddExperience = ({ addExperience, history }) => {
           </p>
         </div>
         <div className='form-group'>
-          <h4>To Date</h4>
+          <h4>Date of Visit</h4>
           <input
             type='date'
             name='to'

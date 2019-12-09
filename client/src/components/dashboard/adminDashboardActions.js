@@ -12,7 +12,8 @@ const AdminDashboardActions = () => {
         to='/add-experience'
         className='btn btn-primaryAdmn1 my-1 whiteText'
       >
-        <i className='fab fa-black-tie text-primary whiteText' /> Patient Status
+        <i className='fab fa-black-tie text-primary whiteText' /> Log Patient
+        Visits
       </Link>
       <Link to='/add-education' className='btn btn-primaryAdmn1 my-1 whiteText'>
         <i className='fas fa-graduation-cap text-primary whiteText' /> Patient
