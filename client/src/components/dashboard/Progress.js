@@ -3,9 +3,9 @@ import PropTypes from 'prop-types';
 import Moment from 'react-moment';
 import moment from 'moment';
 import { connect } from 'react-redux';
-import { deleteEducation } from '../../actions/profile';
+import { deleteProgress } from '../../actions/profile';
 
-const Education = ({ education, deleteEducation }) => {
+const Progress = ({ education, deleteProgress }) => {
   const educations = education.map(edu => (
     <tr key={edu._id}>
       <td className='whiteText'>{edu.game}</td>
@@ -20,7 +20,7 @@ const Education = ({ education, deleteEducation }) => {
       </td>
       <td>
         <button
-          onClick={() => deleteEducation(edu._id)}
+          onClick={() => deleteProgress(edu._id)}
           className='btn btn-danger'
         >
           Delete
@@ -37,7 +37,7 @@ const Education = ({ education, deleteEducation }) => {
           <tr>
             <th>Game Used for Treatment</th>
             <th className='hide-sm'>Observations</th>
-            <th className='hide-sm'>Years</th>
+            <th className='hide-sm'>Duration of Use</th>
             <th />
           </tr>
         </thead>
@@ -47,9 +47,9 @@ const Education = ({ education, deleteEducation }) => {
   );
 };
 
-Education.propTypes = {
+Progress.propTypes = {
   education: PropTypes.array.isRequired,
-  deleteEducation: PropTypes.func.isRequired
+  deleteProgress: PropTypes.func.isRequired
 };
 
-export default connect(null, { deleteEducation })(Education);
+export default connect(null, { deleteProgress })(Progress);

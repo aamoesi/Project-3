@@ -14,7 +14,7 @@ import PrivateRoute from './components/routing/PrivateRoute';
 import adminSpinner from './components/administrators/adminSpinner';
 import CreateProfile from './components/profile-forms/CreateProfile';
 import AddExperience from './components/profile-forms/AddExperience';
-import AddEducation from './components/profile-forms/AddEducation';
+import AddProgress from './components/profile-forms/AddProgress';
 // Games Produced by DAJJMA!
 import Game1 from './components/TicTacToe/Game1';
 import Tetris from './components/tetris/Tetris';
@@ -70,7 +70,7 @@ const App = () => {
               <PrivateRoute
                 exact
                 path='/add-education'
-                component={AddEducation}
+                component={AddProgress}
               />
               <PrivateRoute
                 exact
