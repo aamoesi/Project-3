@@ -15,32 +15,32 @@ const ProfileSchema = new mongoose.Schema({
     type: String
   },
   status: {
-    type: String,
-    required: true
+    type: String
+    // required: true
   },
   symptoms: {
-    type: [String],
-    required: true
+    type: [String]
+    // required: true
   },
   goals: {
     type: String
   },
   experience: [
     {
-      title: {
-        type: String,
-        required: true
+      specialist: {
+        type: String
+        // required: true
       },
-      name: {
-        type: String,
-        required: true
+      symptoms: {
+        type: String
+        // required: true
       },
-      severity: {
+      location: {
         type: String
       },
       from: {
-        type: Date,
-        required: true
+        type: Date
+        // required: true
       },
       to: {
         type: Date
@@ -54,23 +54,23 @@ const ProfileSchema = new mongoose.Schema({
       }
     }
   ],
-  education: [
+  progress: [
     {
-      school: {
-        type: String,
-        required: true
+      game: {
+        type: String
+        // required: true
       },
-      degree: {
-        type: String,
-        required: true
+      observations: {
+        type: String
+        // required: true
       },
-      fieldofstudy: {
-        type: String,
-        required: true
+      treatmentgoals: {
+        type: String
+        // required: true
       },
       from: {
-        type: Date,
-        required: true
+        type: Date
+        // required: true
       },
       to: {
         type: Date
