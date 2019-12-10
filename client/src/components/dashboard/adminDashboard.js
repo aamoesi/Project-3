@@ -21,31 +21,31 @@ const Dashboard = ({
   return loading && profile === null ? (
     <Spinner />
   ) : (
-    <Fragment>
-      <h1 className='large text-primary'>PATIENT DASHBOARD</h1>
-      <p className='lead'>
-        <i className='fas fa-user whiteText2'></i> Patient Portal for:{' '}
-        {user && user.name}
-      </p>
-      {profile !== null ? (
-        <Fragment>
-          <AdminDashboardActions />
-          <Experience experience={profile.experience} />
-          <Progress progress={profile.progress} />
-        </Fragment>
-      ) : (
-        <Fragment>
-          <p className='boldText'>
-            You do not have any patient profiles set up yet. Please add patients
-            below.
+      <section className="container-form-patientDashboard">
+        <h1 className='large text-primary'>PATIENT DASHBOARD</h1>
+        <p className='lead'>
+          <i className='fas fa-user whiteText2'></i> Patient Portal for:{' '}
+          {user && user.name}
+        </p>
+        {profile !== null ? (
+          <Fragment>
+            <AdminDashboardActions />
+            <Experience experience={profile.experience} />
+            <Progress progress={profile.progress} />
+          </Fragment>
+        ) : (
+            <Fragment>
+              <p className='boldText'>
+                You do not have any patient profiles set up yet. Please add patients
+                below.
           </p>
-          <Link to='/create-profile' className='btn btn-primaryAdmn my-1'>
-            Create Patient Profile
+              <Link to='/create-profile' className='btn btn-primaryAdmn my-1'>
+                Create Patient Profile
           </Link>
-        </Fragment>
-      )}
-    </Fragment>
-  );
+            </Fragment>
+          )}
+      </section>
+    );
 };
 
 Dashboard.propTypes = {
