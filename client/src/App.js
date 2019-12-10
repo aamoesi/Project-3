@@ -9,12 +9,12 @@ import Login from './components/auth/Login';
 import Alert from './components/layout/Alert';
 import Dashboard from './components/dashboard/Dashboard';
 import adminDashboard from './components/dashboard/adminDashboard';
-import EditAdminProfile from '../src/components/profile-forms/editAdminProfile';
-import CreateProfile from '../src/components/profile-forms/CreateProfile';
-import EditProfile from '../src/components/profile-forms/EditProfile';
-import CreateAdminProfile from '../src/components/profile-forms/createAdminProfile';
+import editPatientProfile from './components/profile-forms/editPatientProfile';
 import PrivateRoute from './components/routing/PrivateRoute';
 import adminSpinner from './components/administrators/adminSpinner';
+import CreateProfile from './components/profile-forms/CreateProfile';
+import AddExperience from './components/profile-forms/AddExperience';
+import AddProgress from './components/profile-forms/AddProgress';
 // Games Produced by DAJJMA!
 import Game1 from './components/TicTacToe/Game1';
 import Tetris from './components/tetris/Tetris';
@@ -54,29 +54,30 @@ const App = () => {
               <PrivateRoute exact path='/Dashboard' component={Dashboard} />
               <PrivateRoute
                 exact
-                path='/create-profile'
-                component={CreateProfile}
-              />
-              <PrivateRoute
-                exact
-                path='/adminDashboard'
-                component={adminDashboard}
-              />
-              <PrivateRoute
-                exact
-                path='/create-profile'
-                component={CreateProfile}
-              />
-              <PrivateRoute
-                exact
                 path='/adminDashboard'
                 component={adminDashboard}
               />
               <PrivateRoute
                 exact
                 path='/edit-profile'
-                component={EditProfile}
+                component={editPatientProfile}
               />
+              <PrivateRoute
+                exact
+                path='/add-experience'
+                component={AddExperience}
+              />
+              <PrivateRoute
+                exact
+                path='/add-progress'
+                component={AddProgress}
+              />
+              <PrivateRoute
+                exact
+                path='/create-profile'
+                component={CreateProfile}
+              />
+
               {/* Games Developed by DAJJMA */}
               <PrivateRoute exact path='/Game1' component={Game1} />
               <PrivateRoute exact path='/Game2' component={Tetris} />

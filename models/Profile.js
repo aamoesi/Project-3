@@ -5,45 +5,42 @@ const ProfileSchema = new mongoose.Schema({
     type: mongoose.Schema.Types.ObjectId,
     ref: 'user'
   },
-  company: {
+  name: {
     type: String
   },
-  website: {
+  duration: {
     type: String
   },
-  location: {
+  severity: {
     type: String
   },
   status: {
-    type: String,
-    required: true
-  },
-  skills: {
-    type: [String],
-    required: true
-  },
-  bio: {
     type: String
+    // required: true
   },
-  githubusername: {
+  symptoms: {
+    type: [String]
+    // required: true
+  },
+  goals: {
     type: String
   },
   experience: [
     {
-      title: {
-        type: String,
-        required: true
+      specialist: {
+        type: String
+        // required: true
       },
-      company: {
-        type: String,
-        required: true
+      symptoms: {
+        type: String
+        // required: true
       },
       location: {
         type: String
       },
       from: {
-        type: Date,
-        required: true
+        type: Date
+        // required: true
       },
       to: {
         type: Date
@@ -57,23 +54,23 @@ const ProfileSchema = new mongoose.Schema({
       }
     }
   ],
-  education: [
+  progress: [
     {
-      school: {
-        type: String,
-        required: true
+      game: {
+        type: String
+        // required: true
       },
-      degree: {
-        type: String,
-        required: true
+      observations: {
+        type: String
+        // required: true
       },
-      fieldofstudy: {
-        type: String,
-        required: true
+      treatmentgoals: {
+        type: String
+        // required: true
       },
       from: {
-        type: Date,
-        required: true
+        type: Date
+        // required: true
       },
       to: {
         type: Date
@@ -87,23 +84,7 @@ const ProfileSchema = new mongoose.Schema({
       }
     }
   ],
-  social: {
-    youtube: {
-      type: String
-    },
-    twitter: {
-      type: String
-    },
-    facebook: {
-      type: String
-    },
-    linkedin: {
-      type: String
-    },
-    instagram: {
-      type: String
-    }
-  },
+
   date: {
     type: Date,
     default: Date.now

@@ -1,13 +1,13 @@
-import React, { useEffect, useState, Fragment } from 'react';
-import { Link, withRouter, Redirect } from 'react-router-dom';
+import React, { Fragment, useState, useEffect } from 'react';
+import { Link, withRouter } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { createProfile, getCurrentProfile } from '../../actions/profile';
 
-const Createprofile = ({
+const EditProfile = ({
+  profile: { profile, loading },
   createProfile,
   getCurrentProfile,
-  profile: { profile, loading },
   history
 }) => {
   const [formData, setFormData] = useState({
@@ -18,21 +18,33 @@ const Createprofile = ({
     symptoms: '',
     goals: ''
   });
-  //   const [displaySocialInputs, toggleSocialInputs] = useState(false);
-  const { name, duration, severity, status, symptoms, goals } = formData;
-  const onChange = e =>
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  const onSubmit = e => {
-    e.preventDefault();
-    createProfile(formData, history);
-  };
+
+  const [displaySocialInputs, toggleSocialInputs] = useState(false);
+
   useEffect(() => {
     getCurrentProfile();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [getCurrentProfile]);
-  return loading && profile === null ? (
-    <Redirect to='/adminDashboard' />
-  ) : (
+
+    setFormData({
+      name: loading || !profile.name ? '' : profile.name,
+      duration: loading || !profile.duration ? '' : profile.duration,
+      severity: loading || !profile.severity ? '' : profile.severity,
+      status: loading || !profile.status ? '' : profile.status,
+      symptoms: loading || !profile.symptoms ? '' : profile.symptoms.join(','),
+      goals: loading || !profile.goals ? '' : profile.goals
+    });
+  }, [loading, getCurrentProfile]);
+
+  const { name, duration, severity, status, symptoms, goals } = formData;
+
+  const onChange = e =>
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+
+  const onSubmit = e => {
+    e.preventDefault();
+    createProfile(formData, history, true);
+  };
+
+  return (
     <Fragment>
       <h1 className='large text-primary'>Create Your Patient's Profile</h1>
       <p className='lead'>
@@ -136,14 +148,16 @@ const Createprofile = ({
   );
 };
 
-Createprofile.propTypes = {
+EditProfile.propTypes = {
   createProfile: PropTypes.func.isRequired,
   getCurrentProfile: PropTypes.func.isRequired,
   profile: PropTypes.object.isRequired
 };
+
 const mapStateToProps = state => ({
   profile: state.profile
 });
+
 export default connect(mapStateToProps, { createProfile, getCurrentProfile })(
-  withRouter(Createprofile)
+  withRouter(EditProfile)
 );
