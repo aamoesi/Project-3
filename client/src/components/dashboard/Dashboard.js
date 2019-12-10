@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import Spinner from '../layout/Spinner';
 import { getCurrentProfile } from '../../actions/profile';
 import Gamefeed from '../Gamefeed'
+import Dajjmafeed from '../Dajjmafeed'
 
 const Dashboard = ({
   getCurrentProfile,
@@ -32,11 +33,10 @@ const Dashboard = ({
             </Fragment>
           )}
 
-        {profile !== null ? (
+        {/* {profile !== null ? (
           <Fragment>has</Fragment>
         ) : (
             <Fragment>
-              {/* <p>You have not yet setup a profile, please add some info.</p> */}
               <Link to='/Game1' className='btn btn-light my-1'>
                 Simple Tic Tac Toe
               </Link>
@@ -47,7 +47,23 @@ const Dashboard = ({
                 Pokemon Clicky
               </Link>
             </Fragment>
+          )} */}
+
+        <Fragment>
+          <h2 className="h2title">By DAJJMA!</h2>
+        </Fragment>
+
+        {profile !== null ? (
+          <Fragment>has</Fragment>
+        ) : (
+            <Fragment>
+              <Dajjmafeed />
+            </Fragment>
           )}
+
+        <Fragment>
+          <h2 className="h2title">By Other Developers</h2>
+        </Fragment>
 
         {profile !== null ? (
           <Fragment>has</Fragment>
