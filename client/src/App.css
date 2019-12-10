@@ -68,6 +68,7 @@ Johnny and / or team before making any global changes. */
 
 .container-form {
   /* max-width: 60%; */
+  max-width: 60%;
   margin: auto;
   padding: 0 15em;
 }
@@ -741,4 +742,41 @@ button {
 .tetris {
   width: 100%;
   height: 100%;
+}
+
+/*Patient-Admin CSS*/
+
+.container-form-patientLogin {
+  /* max-width: 60%; */
+  max-width: 60%;
+  margin: auto;
+  padding: 0 15em;
+}
+
+.container-form-patientDashboard {
+  /* max-width: 60%; */
+  max-width: 80%;
+  margin: auto;
+  padding: 0 15em;
+}
+
+.container-form-patientExperience {
+  /* max-width: 60%; */
+  max-width: 75%;
+  margin: auto;
+  padding: 0 15em;
+}
+
+.container-form-patientMonitorProgress {
+  /* max-width: 60%; */
+  max-width: 75%;
+  margin: auto;
+  padding: 0 15em;
+}
+
+.container-form-patientCreatePatientProfile {
+  /* max-width: 60%; */
+  max-width: 75%;
+  margin: auto;
+  padding: 0 15em;
 }

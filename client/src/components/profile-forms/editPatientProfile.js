@@ -45,7 +45,7 @@ const EditProfile = ({
   };
 
   return (
-    <Fragment>
+    <section className="container-form-patientCreatePatientProfile">
       <h1 className='large text-primary'>Create Your Patient's Profile</h1>
       <p className='lead'>
         <i className='fas fa-user' /> Let's start by getting some information
@@ -144,7 +144,7 @@ const EditProfile = ({
           Go Back
         </Link>
       </form>
-    </Fragment>
+    </section>
   );
 };
 
