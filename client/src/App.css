@@ -18,8 +18,8 @@ body {
   font-size: 1rem;
   line-height: 1.6;
 
-  background-image: url("../src/img/dajjma-background.png");
-  background-color: #9EFE6A;
+  background-image: url('../src/img/dajjma-background.png');
+  background-color: #9efe6a;
 
   color: #333;
 }
@@ -178,11 +178,10 @@ Johnny and / or team before making any global changes. */
   color: #0c038f;
   background: #f7f5fa;
   box-shadow: 0 0 10px #f7f5fa, 0 0 40px #f7f5fa, 0 0 80px #f7f5fa;
-
 }
 
 .btn::before {
-  content: "";
+  content: '';
   position: absolute;
   left: 0;
   top: 0;
@@ -221,8 +220,14 @@ Johnny and / or team before making any global changes. */
   margin-left: 550px;
 }
 
+.btn-primaryAdmn1 {
+  background: #272729;
+  color: #2e2e33;
+  margin-top: 10px;
+  margin-left: 20px;
+}
+
 .boldText {
- 
   color: white;
 }
 
@@ -233,26 +238,32 @@ Johnny and / or team before making any global changes. */
   margin-left: 20px;
 }
 
-.whiteText{
+.whiteText {
   color: white;
 }
 
+.whiteText1 {
+  color: white;
+  font-size: 23px;
+}
 
+.whiteText2 {
+  color: white;
+  font-size: 35px;
+}
 
 .btn-light,
 .bg-light,
 .badge-light,
 .alert-light {
-  background: #0c038f; 
+  background: #0c038f;
   color: #f7f5fa;
-  
 }
 
 .btn-light:hover {
   color: #f7f5fa;
   background: #0c038f;
   box-shadow: 0 0 10px #0c038f, 0 0 40px #0c038f, 0 0 80px #0c038f;
-
 }
 
 .btn-dark,
@@ -397,8 +408,6 @@ button {
   color: black;
 }
 
-
-
 .navbar ul {
   display: flex;
 }
@@ -417,7 +426,6 @@ button {
 .navbar .welcome span {
   margin-right: 0.6rem;
 }
-
 
 /* Landing Page */
 .landing {
@@ -487,7 +495,7 @@ button {
   text-align: center;
 }
 
-.profile-about .skills {
+.profile-about .symptoms {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -651,7 +659,7 @@ button {
       'github';
   }
 
-  .profile-about .skills {
+  .profile-about .symptoms {
     flex-direction: column;
   }
 
