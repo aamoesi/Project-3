@@ -18,8 +18,10 @@ body {
   font-size: 1rem;
   line-height: 1.6;
 
-  background-image: url('../src/img/dajjma-background.png');
-  background-color: #9efe6a;
+  background: linear-gradient(to bottom right, rgb(154, 50, 205), rgb(0, 255, 127));
+  background-repeat: cover;
+  /* background-image: url('../src/img/dajjma-background.png');
+  background-color: #9efe6a; */
 
   color: #333;
 }
@@ -58,6 +60,7 @@ img {
 Johnny and / or team before making any global changes. */
 .container {
   max-width: 100%;
+  max-height: 100%;
   margin: auto;
   overflow: hidden;
   /* padding: 0 8rem; */
