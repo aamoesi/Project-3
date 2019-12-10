@@ -9,9 +9,7 @@ import mainPowerGif from "../../gif/main-power.gif";
 
 
 const Gamefeed = props => {
-    // <div className="game-thumb">
-    //     <a href="https://cdn.htmlgames.com/MergeIt/" target="_blank"><img src="https://www.htmlgames.com/uploaded/thumb500/mergeit500.jpg"></a>
-    // </div>
+
 
     const [activeGif, setActiveGif] = useState( null );
 
@@ -30,7 +28,7 @@ const Gamefeed = props => {
                 onMouseEnter={ gifSwitch }
                 onMouseLeave={ () => setActiveGif(null)}
                 style={{ width: 300, height: 200, padding: 15, borderRadius: 25 }}
-                src={activeGif === "https://www.htmlgames.com/uploaded/thumb500/mergeit500.jpg" ? mergeItGif : "https://www.htmlgames.com/uploaded/thumb500/mergeit500.jpg"}
+                src={ activeGif === "https://www.htmlgames.com/uploaded/thumb500/mergeit500.jpg" ? mergeItGif : "https://www.htmlgames.com/uploaded/thumb500/mergeit500.jpg" }
             />
         </Link>
         <Link to="/games/1010hex">
@@ -38,7 +36,7 @@ const Gamefeed = props => {
                 onMouseEnter={ gifSwitch }
                 onMouseLeave={ () => setActiveGif(null)}
                 style={{ width: 300, height: 200, padding: 15, borderRadius: 25 }}
-                src={activeGif === "https://www.htmlgames.com/uploaded/thumb500/1010hex500.jpg" ? tenTenHexGif : "https://www.htmlgames.com/uploaded/thumb500/1010hex500.jpg"}
+                src={ activeGif === "https://www.htmlgames.com/uploaded/thumb500/1010hex500.jpg" ? tenTenHexGif : "https://www.htmlgames.com/uploaded/thumb500/1010hex500.jpg" }
             />
         </Link>
         <Link to="/games/mainpower">
@@ -46,7 +44,7 @@ const Gamefeed = props => {
                 onMouseEnter={ gifSwitch }
                 onMouseLeave={ () => setActiveGif(null)}
                 style={{ width: 300, height: 200, padding: 15, borderRadius: 25 }}
-                src={activeGif === "https://cdn.htmlgames.com/MainPower/img/icon/image-300x200.jpg" ? mainPowerGif : "https://cdn.htmlgames.com/MainPower/img/icon/image-300x200.jpg"}
+                src={ activeGif === "https://cdn.htmlgames.com/MainPower/img/icon/image-300x200.jpg" ? mainPowerGif : "https://cdn.htmlgames.com/MainPower/img/icon/image-300x200.jpg" }
             />
         </Link>
     </div>

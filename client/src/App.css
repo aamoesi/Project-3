@@ -49,14 +49,32 @@ img {
   width: 100%;
 }
 
+
+
 /* Utilities */
+
+
+/* NOTE: Container is a global property that affects multiple pages inlcluding Dashboard, Dajjmafeed, etc.  Please consult
+Johnny and / or team before making any global changes. */
 .container {
-  max-width: 1100px;
+  max-width: 100%;
   margin: auto;
   overflow: hidden;
-  padding: 0 2rem;
-  margin-top: 6rem;
-  margin-bottom: 3rem;
+  /* padding: 0 8rem; */
+  margin-top: 3.9rem;
+  /* margin-bottom: 3rem; */
+  align-content: space-around;
+}
+
+.container-form {
+  /* max-width: 60%; */
+  margin: auto;
+  padding: 0 15em;
+}
+
+.center {
+  margin: auto;
+  /* text-align: center; */
 }
 
 /* Text Styles*/
@@ -565,6 +583,10 @@ button {
     margin-top: 8rem;
   }
 
+  .container-form {
+    margin-top: 6rem;
+  }
+
   .hide-sm {
     display: none;
     color: white;
@@ -691,18 +713,24 @@ button {
   color: #0c038f;
 }
 
+/* User Dashboard */
+.h2title {
+  color: #f6f8f8;
+  font-weight: normal;
+  padding-left: 2%;
+}
+
+/* 2D TIC TAC TOE */
 .game {
   background: url('../src/img/2d-tic-tac-toe.png') no-repeat;
-  width: 1000px;
-  height: 700px;
-  padding-left: 300px;
-  padding-top: 120px;
+  width: 100%;
+  height: 100%;
+  padding-left: 35%;
+  padding-top: 10%;
 }
 
+/* TETRIS */
 .tetris {
-  width: 1400px;
-  height: 700px;
+  width: 100%;
+  height: 100%;
 }
-
-
-
