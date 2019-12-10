@@ -31,7 +31,7 @@ const AddProgress = ({ addProgress, history }) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
 
   return (
-    <Fragment>
+    <section className="container-form-patientMonitorProgress">
       <h1 className='large text-primary'>Monitor Progress.</h1>
       <p className='lead'>
         <i className='fas fa-code-branch' /> Track your patient's improvement as
@@ -123,7 +123,7 @@ const AddProgress = ({ addProgress, history }) => {
           Go Back
         </Link>
       </form>
-    </Fragment>
+    </section>
   );
 };
 

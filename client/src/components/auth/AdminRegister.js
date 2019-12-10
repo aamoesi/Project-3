@@ -56,7 +56,7 @@ const AdminRegister = ({ setAlert, register, isAuthenticated }) => {
   }
 
   return (
-    <Fragment>
+    <section className="container-form-patientLogin">
       <h1 className='large text-primary'>Patient Registration</h1>
       <p className='lead'>
         <i className='fas fa-user'></i> Please Create an Account for your
@@ -107,7 +107,7 @@ const AdminRegister = ({ setAlert, register, isAuthenticated }) => {
           Sign In
         </Link>
       </p>
-    </Fragment>
+    </section>
   );
 };
 
