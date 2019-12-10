@@ -68,6 +68,7 @@ Johnny and / or team before making any global changes. */
 
 .container-form {
   /* max-width: 60%; */
+  max-width: 60%;
   margin: auto;
   padding: 0 15em;
 }
@@ -742,3 +743,13 @@ button {
   width: 100%;
   height: 100%;
 }
+
+/*Patient-Admin CSS*/
+
+.container-form-patient {
+  /* max-width: 60%; */
+  max-width: 60%;
+  margin: auto;
+  padding: 0 15em;
+}
+

@@ -49,7 +49,7 @@ const AdminLogin = ({ login, isAuthenticated }) => {
   // }
 
   return (
-    <Fragment>
+    <section className="container-form-patient">
       <h1 className='large text-primary'>Sign In</h1>
       <p className='lead'>
         <i className='fas fa-user'></i> Sign Into Your Patient's Account
@@ -84,7 +84,7 @@ const AdminLogin = ({ login, isAuthenticated }) => {
           Create Account
         </Link>
       </p>
-    </Fragment>
+    </section>
   );
 };
 
