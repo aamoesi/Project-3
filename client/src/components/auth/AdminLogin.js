@@ -49,7 +49,7 @@ const AdminLogin = ({ login, isAuthenticated }) => {
   // }
 
   return (
-    <section className="container-form-patient">
+    <section className="container-form-patientLogin">
       <h1 className='large text-primary'>Sign In</h1>
       <p className='lead'>
         <i className='fas fa-user'></i> Sign Into Your Patient's Account

@@ -56,7 +56,7 @@ const AdminRegister = ({ setAlert, register, isAuthenticated }) => {
   }
 
   return (
-    <section className="container-form-patient">
+    <section className="container-form-patientLogin">
       <h1 className='large text-primary'>Patient Registration</h1>
       <p className='lead'>
         <i className='fas fa-user'></i> Please Create an Account for your

@@ -33,7 +33,7 @@ const AddExperience = ({ addExperience, history }) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
 
   return (
-    <Fragment>
+    <section className="container-form-patientExperience">
       <h1 className='large text-primary'>Patient Experience</h1>
       <p className='lead'>
         <i className='fas fa-code-branch' /> Keep track of your patient's
@@ -54,7 +54,7 @@ const AddExperience = ({ addExperience, history }) => {
             name='specialist'
             value={specialist}
             onChange={e => onChange(e)}
-            // required
+          // required
           />
         </div>
         <div className='form-group'>
@@ -64,7 +64,7 @@ const AddExperience = ({ addExperience, history }) => {
             name='symptoms'
             value={symptoms}
             onChange={e => onChange(e)}
-            // required
+          // required
           />
         </div>
         <div className='form-group'>
@@ -134,7 +134,7 @@ const AddExperience = ({ addExperience, history }) => {
           Go Back
         </Link>
       </form>
-    </Fragment>
+    </section>
   );
 };
 
