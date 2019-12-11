@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect } from 'react';
+import React, { Fragment, useEffect, Component } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Navbar from './components/layout/Navbar';
 import Landing from './components/layout/Landing';
@@ -30,73 +30,79 @@ import { Provider } from 'react-redux';
 import store from './store';
 import { loadUser } from './actions/auth';
 import setAuthToken from './utils/setAuthToken';
-// import Particles from 'react-particles-js';
+import Particles from 'react-particles-js';
 import './App.css';
 
 if (localStorage.token) {
   setAuthToken(localStorage.token);
 }
+
+
+// Particles START
+class ParticleBackground extends Component{
+  particleOpt = {
+    particles: {
+      number: {
+        value: 150,
+        density: {
+          enable: true,
+          value_area: 800
+        }
+      }
+    }
+  }
+
+  render(){
+      return (
+          <div>
+            <Particles 
+            params={this.particleOpt}
+          />
+          </div>
+      );
+  };
+}
+// Particles END  
+
+
+
+
 const App = () => {
   useEffect(() => {
     store.dispatch(loadUser());
   }, []);
+
+  
+
   return (
     <Provider store={store}>
       <Router>
         <Fragment>
           <Navbar />
-          <Route exact path='/' component={Landing} />
-          <section className='container'>
+          <section className='margin-top viewport-height'>
             <Alert />
             <Switch>
+              <Route exact path='/' component={Landing} />
               <Route exact path='/Register' component={Register} />
               <Route exact path='/Login' component={Login} />
               <Route exact path='/AdminRegister' component={AdminRegister} />
               <Route exact path='/AdminLogin' component={AdminLogin} />
               <Route exact path='/administrators' component={adminSpinner} />
               <PrivateRoute exact path='/Dashboard' component={Dashboard} />
-              <PrivateRoute
-                exact
-                path='/adminDashboard'
-                component={adminDashboard}
-              />
-              <PrivateRoute
-                exact
-                path='/edit-profile'
-                component={editPatientProfile}
-              />
-              <PrivateRoute
-                exact
-                path='/add-experience'
-                component={AddExperience}
-              />
-              <PrivateRoute
-                exact
-                path='/add-progress'
-                component={AddProgress}
-              />
-              <PrivateRoute
-                exact
-                path='/create-profile'
-                component={CreateProfile}
-              />
+              <PrivateRoute exact path='/adminDashboard' component={adminDashboard} />
+              <PrivateRoute exact path='/edit-profile' component={editPatientProfile} />
+              <PrivateRoute exact path='/add-experience' component={AddExperience} />
+              <PrivateRoute exact path='/add-progress' component={AddProgress} />
+              <PrivateRoute exact path='/create-profile' component={CreateProfile} />
 
               {/* Games Developed by DAJJMA */}
               <PrivateRoute exact path='/Game1' component={Game1} />
               <PrivateRoute exact path='/Game2' component={Tetris} />
-              <PrivateRoute
-                exact
-                path='/pokemon-clicky'
-                component={PokemonClicky}
-              />
+              <PrivateRoute exact path='/pokemon-clicky' component={PokemonClicky} />
               {/* Games Developed by Other Developers */}
               <PrivateRoute exact path='/games/mergeit' component={Mergeit} />
               <PrivateRoute exact path='/games/1010hex' component={Tentenhex} />
-              <PrivateRoute
-                exact
-                path='/games/mainpower'
-                component={Mainpower}
-              />
+              <PrivateRoute exact path='/games/mainpower' component={Mainpower} />
             </Switch>
             <Twitch/>
           </section>
@@ -106,4 +112,8 @@ const App = () => {
     </Provider>
   );
 };
+
+
+
 export default App;
+

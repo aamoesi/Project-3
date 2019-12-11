@@ -1,7 +1,32 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { Link, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import Particles from 'react-particles-js';
+
+class ParticleBackground extends Component{
+  particleOpt = {
+    particles: {
+      number: {
+        value: 150,
+        density: {
+          enable: true,
+          value_area: 800
+        }
+      }
+    }
+  }
+
+  render(){
+      return (
+          <div>
+            <Particles 
+            params={this.particleOpt}
+          />
+          </div>
+      );
+  };
+}
 
 const Landing = ({ isAuthenticated }) => {
   if (isAuthenticated) {
@@ -9,7 +34,8 @@ const Landing = ({ isAuthenticated }) => {
   }
 
   return (
-    <section className='landing'>
+    <section className='landing viewport-height'>
+      <ParticleBackground />
       <div className='dark-overlay'>
         <div className='landing-inner'>
           <h1 className='x-large'></h1>

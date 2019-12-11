@@ -8,9 +8,7 @@ import Game from '../../components/games/Mainpower';
 function Mainpower() {
     return (
         <div className="game-thumb">
-            <div>
-                <iframe src="https://cdn.htmlgames.com/MainPower/" width="1000px" height="600px" align="center"></iframe>
-            </div>
+            <iframe src="https://cdn.htmlgames.com/MainPower/" width="1000px" height="600px" align="center"></iframe>
         </div>
     );
 }
