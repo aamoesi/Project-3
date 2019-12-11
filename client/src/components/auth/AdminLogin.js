@@ -50,7 +50,7 @@ const AdminLogin = ({ login, isAuthenticated }) => {
 
   return (
     <section className="container-form-patientLogin">
-      <h1 className='large text-primary'>Sign In</h1>
+      <h1 className='large text-primary'>SIGN IN</h1>
       <p className='lead'>
         <i className='fas fa-user'></i> Sign Into Your Patient's Account
       </p>
@@ -76,12 +76,12 @@ const AdminLogin = ({ login, isAuthenticated }) => {
             minLength='6'
           />
         </div>
-        <input type='submit' className='btn btn-primaryAdmn' value='Login' />
+        <input type='submit' className='btn btn-primaryAdmn' value='LOGIN' />
       </form>
       <p className='my-1 whiteText'>
         Don't have an Admin Account?{' '}
         <Link to='/AdminRegister' className='signIn'>
-          Create Account
+          CREATE ACCOUNT
         </Link>
       </p>
     </section>

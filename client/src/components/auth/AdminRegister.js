@@ -57,7 +57,7 @@ const AdminRegister = ({ setAlert, register, isAuthenticated }) => {
 
   return (
     <section className="container-form-patientLogin">
-      <h1 className='large text-primary'>Patient Registration</h1>
+      <h1 className='large text-primary'>PATIENT REGISTRATION</h1>
       <p className='lead'>
         <i className='fas fa-user'></i> Please Create an Account for your
         Patient
@@ -99,12 +99,12 @@ const AdminRegister = ({ setAlert, register, isAuthenticated }) => {
             onChange={e => onChange(e)}
           />
         </div>
-        <input type='submit' className='btn btn-primaryAdmn' value='Register' />
+        <input type='submit' className='btn btn-primaryAdmn' value='REGISTER' />
       </form>
       <p className='my-1 whiteText'>
         Already have an account?{' '}
         <Link to='/AdminLogin' className='signIn'>
-          Sign In
+          SIGN IN
         </Link>
       </p>
     </section>
