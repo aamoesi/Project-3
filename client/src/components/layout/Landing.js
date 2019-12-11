@@ -34,7 +34,7 @@ const Landing = ({ isAuthenticated }) => {
   }
 
   return (
-    <section className='landing'>
+    <section className='landing viewport-height'>
       <ParticleBackground />
       <div className='dark-overlay'>
         <div className='landing-inner'>

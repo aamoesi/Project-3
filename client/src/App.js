@@ -78,10 +78,10 @@ const App = () => {
       <Router>
         <Fragment>
           <Navbar />
-          <Route exact path='/' component={Landing} />
-          <section className='container'>
+          <section className='margin-top viewport-height'>
             <Alert />
             <Switch>
+              <Route exact path='/' component={Landing} />
               <Route exact path='/Register' component={Register} />
               <Route exact path='/Login' component={Login} />
               <Route exact path='/AdminRegister' component={AdminRegister} />

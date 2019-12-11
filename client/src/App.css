@@ -64,7 +64,7 @@ Johnny and / or team before making any global changes. */
   margin: auto;
   overflow: hidden;
   /* padding: 0 8rem; */
-  margin-top: 3.9rem;
+  /* margin-top: 3.9rem; */
   /* margin-bottom: 3rem; */
   align-content: space-around;
 }
@@ -76,9 +76,23 @@ Johnny and / or team before making any global changes. */
   padding: 0 15em;
 }
 
-.center {
+.margin-top {
+  margin-top: 3.9rem;
+}
+
+.viewport-height {
+  min-height: calc(100vh - 3.9rem);
+}
+
+.game-thumb {
   margin: auto;
+  display:block;
   /* text-align: center; */
+}
+
+.iframe-size {
+  width: "1000px";
+  height: "600px";
 }
 
 /* Text Styles*/
@@ -435,7 +449,6 @@ button {
 .landing {
   position: relative;
   background: url('./img/DAJJMA logo dark 01.png') no-repeat center;
-  height: 100vh;
 }
 
 .landing-inner {
